@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>The Paradise-Hotel Website Template | Hotel :: w3layouts</title>
+<title>Hotel Boa Viagem | Home ::</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>

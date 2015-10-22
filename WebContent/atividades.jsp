@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>The Paradise-Hotel Website Template | Activities :: w3layouts</title>
+<title>Hotel Boa Viagem | Atividades ::</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
@@ -53,7 +53,7 @@
 		<div class="h_right">
 			<!--start menu -->
 			<ul class="menu">
-				<li><a href="index.jsp">Hotel</a></li> |
+				<li><a href="index.jsp">Home</a></li> |
 				<li><a href="quartos.jsp">Quartos</a></li> |
 				<li><a href="reserva.jsp">Reserva</a></li> |
 				<li class="active"><a href="atividades.jsp">Atividades</a></li> |
@@ -66,7 +66,7 @@
 		<div class="top-nav">
 		<nav class="clearfix">
 				<ul>
-				<li class="active"><a href="index.jsp">Hotel</a></li> 
+				<li class="active"><a href="index.jsp">Home</a></li> 
 				<li><a href="quartos.jsp">Quartos</a></li> 
 				<li><a href="reservas.jsp">Reservas</a></li> 
 				<li><a href="atividades.jsp">Atividades</a></li> 
@@ -193,7 +193,7 @@
 			</div>
 			<div class="f_nav">
 				<ul>
-					<li><a href="index.jsp">Hotel</a></li>
+					<li><a href="index.jsp">Home</a></li>
 					<li><a href="quartos.jsp">Quartos</a></li>
 					<li><a href="reserva.jsp">Reserva</a></li>
 					<li><a href="contato.jsp">Contato</a></li>
