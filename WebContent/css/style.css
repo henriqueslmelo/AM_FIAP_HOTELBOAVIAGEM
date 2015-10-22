@@ -280,7 +280,7 @@ select option{
 	-o-transition: 0.5s all;
 	outline: none;
 	cursor: pointer;
-}
+}/
 .date_btn form input[type="submit"]:hover{
 	background: #228AC6;
 }
