@@ -146,19 +146,20 @@
 		<div class="reservation">
 			<ul>
 				<li class="span1_of_1">
-					<h5>type of room:</h5>
+					<h5>Tipo do Quarto</h5>
 					<!----------start section_room----------->
 					<div class="section_room">
 						<select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Select a type of room</option>
-				            <option value="null">Suite room</option>         
-				            <option value="AX">Single room</option>
-							<option value="AX">Double room</option>
+							<option value="null">Selecione o Quarto</option>
+				            <option value="AX"">Master Luxo</option>         
+				            <option value="AX">Luxo</option>
+							<option value="AX">Master</option>
+							<option value="AX">Standard</option>
 		        		</select>
 					</div>	
 				</li>
 				<li  class="span1_of_1 left">
-					<h5>check-in-date:</h5>
+					<h5>Check-In</h5>
 					<div class="book_date">
 						<form>
 							<input class="date" id="datepicker" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
@@ -167,7 +168,7 @@
 					</div>					
 				</li>
 				<li  class="span1_of_1 left">
-					<h5>check-out-date:</h5>
+					<h5>Check-Out</h5>
 					<div class="book_date">
 						<form>
 							<input class="date" id="datepicker1" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
@@ -175,12 +176,34 @@
 					</div>		
 				</li>
 				<li class="span1_of_2 left">
-					<h5>Adults:</h5>
+					<h5>Adultos:</h5>
 					<!----------start section_room----------->
 					<div class="section_room">
 						<select id="country" onchange="change_country(this.value)" class="frm-field required">
 							<option value="null">1</option>
-				            <option value="null">2</option>         
+				            <option value="AX"">2</option>         
+				            <option value="AX">3</option>
+							<option value="AX">4</option>
+		        		</select>
+					</div>					
+				</li>
+				<li class="span1_of_2 left">
+					<h5>Crianças de 0-2:</h5>
+					<div class="section_room">
+						<select id="country" onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">1</option>
+				            <option value="AX"">2</option>         
+				            <option value="AX">3</option>
+							<option value="AX">4</option>
+		        		</select>
+					</div>					
+				</li>
+				<li class="span1_of_2 left">
+					<h5>Crianças de 3-5:</h5>
+					<div class="section_room">
+						<select id="country" onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">1</option>
+				            <option value="AX"">2</option>         
 				            <option value="AX">3</option>
 							<option value="AX">4</option>
 		        		</select>
@@ -188,8 +211,8 @@
 				</li>
 				<li class="span1_of_3">
 					<div class="date_btn">
-						<form>
-							<input type="submit" value="book now" />
+						<form action="reserva.jsp">
+							<input type="submit" value="Reservar" />
 						</form>
 					</div>
 				</li>
@@ -208,7 +231,18 @@
 					<span class="next"> </span>
 				</a>
 			</div>
-			<h4><a href="#">single room<span>120$</span></a></h4>
+			<h4><a href="#">Standard<span>R$200,00</span></a></h4>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		</div>
+		<div class="grids_of_3">
+		<div class="grid1_of_3">
+			<div class="grid1_of_3_img">
+				<a href="details.html">
+					<img src="images/pic2.jpg" alt="" />
+					<span class="next"> </span>
+				</a>
+			</div>
+			<h4><a href="#">Master<span>R$260,00</span></a></h4>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 		</div>
 		<div class="grid1_of_3">
@@ -218,7 +252,7 @@
 					<span class="next"> </span>
 				</a>
 			</div>
-			<h4><a href="#">double room<span>180$</span></a></h4>
+			<h4><a href="#">Luxo<span>R$330,00</span></a></h4>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 		</div>
 		<div class="grid1_of_3">
@@ -228,7 +262,7 @@
 					<span class="next"> </span>
 				</a>
 			</div>
-			<h4><a href="#">suite room<span>210$</span></a></h4>
+			<h4><a href="#">Master Luxo<span>R$400,00</span></a></h4>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 		</div>
 		<div class="clear"></div>

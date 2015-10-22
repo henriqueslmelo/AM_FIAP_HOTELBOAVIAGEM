@@ -131,8 +131,8 @@
 				</div>
 				<div class="sidebar">
 					<div class="date_btn">
-						<form>
-							<input type="submit" value="book now" style="width: 82px;">
+						<form action="reserva.jsp">
+							<input type="submit" value="Reservar" style="width: 82px;">
 						</form>
 					</div>
 					<h4>room features</h4>
@@ -145,7 +145,7 @@
 						<li><a href="#">Proin id diam eleifend neque auctor
 								scelerisque.</a></li>
 					</ul>
-					<h4>we accept</h4>
+					<h4>Formas de Pagamento</h4>
 					<ul class="s_nav1">
 						<li><a class="icon1" href="#"></a></li>
 						<li><a class="icon2" href="#"></a></li>

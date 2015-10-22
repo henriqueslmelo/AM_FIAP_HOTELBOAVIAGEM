@@ -111,7 +111,7 @@
 				</div>
 				<div class="span_of_2">
 					<div class="span2_of_1">
-						<h4>check-in:</h4>
+						<h4>Check-In:</h4>
 						<div class="book_date btm">
 							<form>
 								<input class="date" id="datepicker1" type="text"
@@ -120,28 +120,29 @@
 							</form>
 						</div>
 						<div class="sel_room">
-							<h4>number of rooms</h4>
+							<h4>Número de Quartoss</h4>
 							<select id="country" onchange="change_country(this.value)"
 								class="frm-field required">
-								<option value="null">Select a type of Room</option>
-								<option value="null">Suite room</option>
-								<option value="AX">Single room</option>
-								<option value="AX">Double room</option>
+								<option value="null">Selecione o tipo do quarto</option>
+								<option value="AX">Master Luxo</option>
+								<option value="AX">Luxo</option>
+								<option value="AX">Master</option>
+								<option value="AX">Standard</option>
 							</select>
 						</div>
 						<div class="sel_room left">
-							<h4>adults per room:</h4>
+							<h4>Adultos por Quarto</h4>
 							<select id="country" onchange="change_country(this.value)"
 								class="frm-field required">
 								<option value="null">1</option>
-								<option value="null">2</option>
+								<option value="AX">2</option>
 								<option value="AX">3</option>
 								<option value="AX">4</option>
 							</select>
 						</div>
 					</div>
 					<div class="span2_of_1">
-						<h4>check-out:</h4>
+						<h4>Check-Out</h4>
 						<div class="book_date btm">
 							<form>
 								<input class="date" id="datepicker1" type="text"
@@ -150,23 +151,23 @@
 							</form>
 						</div>
 						<div class="sel_room">
-							<h4>childern 0-5:</h4>
+							<h4>Crianças de 0-2:</h4>
 							<select id="country" onchange="change_country(this.value)"
 								class="frm-field required">
 								<option value="null">0</option>
-								<option value="null">1</option>
-								<option value="null">2</option>
+								<option value="AX">1</option>
+								<option value="AX">2</option>
 								<option value="AX">3</option>
 								<option value="AX">4</option>
 							</select>
 						</div>
 						<div class="sel_room left">
-							<h4>childern 6-12:</h4>
+							<h4>Crianças de 3-5:</h4>
 							<select id="country" onchange="change_country(this.value)"
 								class="frm-field required">
 								<option value="null">0</option>
-								<option value="null">1</option>
-								<option value="null">2</option>
+								<option value="AX">1</option>
+								<option value="AX">2</option>
 								<option value="AX">3</option>
 								<option value="AX">4</option>
 							</select>
@@ -176,7 +177,7 @@
 				</div>
 				<div class="res_btn">
 					<form>
-						<input type="submit" value="book now" style="width: 280px;">
+						<input type="submit" value="Reservar" style="width: 280px;">
 					</form>
 				</div>
 			</div>
