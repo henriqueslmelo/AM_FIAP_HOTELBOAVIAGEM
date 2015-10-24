@@ -3,11 +3,9 @@ package br.com.fiap.am.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.am.beans.Reserva;
 import br.com.fiap.am.beans.TipoQuarto;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
