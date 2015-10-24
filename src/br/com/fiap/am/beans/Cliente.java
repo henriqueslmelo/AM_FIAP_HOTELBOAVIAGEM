@@ -4,28 +4,29 @@ public class Cliente extends Pessoa {
 	private int codigoCliente;
 	private String cpf;
 	private String rg;
+	private int quartoPreferido;
 	private int senha;
-	private Telefone telefone;
 
 	public Cliente() {
 		super();
 	}
 
-	public Cliente(int codigoPessoa, String nome, Endereco endereco, String dtNascimento, String email) {
-		super(codigoPessoa, nome, endereco, dtNascimento, email);
+	public Cliente(int codigoPessoa, String nome, Endereco endereco, String dtNascimento, String email, Telefone telefone ) {
+		super(codigoPessoa, nome, endereco, dtNascimento, email, telefone);
 	}
 
-	public Cliente(String nome, Endereco endereco, String dtNascimento, String email) {
-		super(nome, endereco, dtNascimento, email);
+	public Cliente(String nome, Endereco endereco, String dtNascimento, String email, Telefone telefone) {
+		super(nome, endereco, dtNascimento, email, telefone);
 	}
 
-	public Cliente(int codigoCliente, String cpf, String rg, int senha,  Telefone telefone) {
+	public Cliente(int codigoCliente, String cpf, String rg, int quartoPreferido, int senha) {
 		super();
 		this.codigoCliente = codigoCliente;
 		this.cpf = cpf;
 		this.rg = rg;
+		this.quartoPreferido = quartoPreferido;
 		this.senha = senha;
-		this.telefone = telefone;
+		
 	}
 
 	public Cliente(String cpf, String rg, int senha) {
@@ -58,6 +59,15 @@ public class Cliente extends Pessoa {
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
+	
+	public int getQuartoPreferido() {
+		return quartoPreferido;
+	}
+
+	public void setQuartoPreferido(int quartoPreferido) {
+		this.quartoPreferido = quartoPreferido;
+	}
+
 
 	public int getSenha() {
 		return senha;
@@ -67,12 +77,6 @@ public class Cliente extends Pessoa {
 		this.senha = senha;
 	}
 
-	public Telefone getTelefone() {
-		return telefone;
-	}
 
-	public void setTelefone(Telefone telefone) {
-		this.telefone = telefone;
-	}
 
 }

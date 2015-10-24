@@ -3,52 +3,49 @@ package br.com.fiap.am.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.am.beans.Reserva;
-import br.com.fiap.am.beans.TipoQuarto;
+import br.com.fiap.am.beans.Funcionario;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
-public class TipoQuartoDAO {
+public class FuncionarioDAO {
 	
 	// conexao
 	private Connection connection;
 
-	public TipoQuartoDAO() throws Excecao{
+	public FuncionarioDAO() throws Excecao {
 		this.connection = new Conexao().getConnection();
 	}
 
 
 	// LISTAR
-	public List<TipoQuarto> getLista() throws Excecao {
+	public List<Funcionario> getLista() throws Excecao {
 		try {
-			List<TipoQuarto> tipoQuarto = new ArrayList<TipoQuarto>();
+			List<Funcionario> funcionario = new ArrayList<Funcionario>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT T_AM_DFA_TIPO_QUARTO");
+					.prepareStatement("SELECT FROM * T_AM_DFA_FUNCIONARIO");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				TipoQuarto tp = new TipoQuarto();
-				tp.setCodigoTipoQuarto(rs.getInt("CD_TIPO_QUARTO"));
-				tp.setDescricao(rs.getString("DS_TIPO_QUARTO"));
-				tp.setDescricao(rs.getString("DS_OBSERVACAO"));
+				Funcionario func  = new Funcionario();
+				func.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
+				func.setDtAdmissao(rs.getString("DT_ADIMISSAO"));
+				func.setCargo(rs.getString("DS_CARGO"));
 
-				
 
 			}
 			rs.close();
 			stmt.close();
-			return tipoQuarto;
+			return funcionario;
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro" , e);
 		} finally {
 			try {
 				connection.close();
 			} catch (Exception e) {
-				throw new Excecao("Ocorreu um erro" , e);
+				throw new Excecao("Ocorreu um erro", e);
 			}
 		}
 

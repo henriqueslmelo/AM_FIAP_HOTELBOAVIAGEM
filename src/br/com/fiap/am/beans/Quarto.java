@@ -1,7 +1,6 @@
 package br.com.fiap.am.beans;
 
 public class Quarto {
-	private int codigoQuarto;
 	private int nrQuarto;
 	private TipoQuarto tipoQuarto;
 	private int andar;
@@ -9,15 +8,6 @@ public class Quarto {
 
 	public Quarto() {
 		super();
-	}
-
-	public Quarto(int codigoQuarto, int nrQuarto, TipoQuarto tipoQuarto, int andar, int capacidade) {
-		super();
-		this.codigoQuarto = codigoQuarto;
-		this.nrQuarto = nrQuarto;
-		this.tipoQuarto = tipoQuarto;
-		this.andar = andar;
-		this.capacidade = capacidade;
 	}
 
 	public Quarto(int nrQuarto, TipoQuarto tipoQuarto, int andar, int capacidade) {
@@ -28,13 +18,6 @@ public class Quarto {
 		this.capacidade = capacidade;
 	}
 
-	public int getCodigoQuarto() {
-		return codigoQuarto;
-	}
-
-	public void setCodigoQuarto(int codigoQuarto) {
-		this.codigoQuarto = codigoQuarto;
-	}
 
 	public int getNrQuarto() {
 		return nrQuarto;

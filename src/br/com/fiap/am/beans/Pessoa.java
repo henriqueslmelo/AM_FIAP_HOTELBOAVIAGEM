@@ -6,26 +6,30 @@ public class Pessoa {
 	private Endereco endereco;
 	private String dtNascimento;
 	private String email;
+	private Telefone telefone;
 
 	public Pessoa() {
 		super();
 	}
 
-	public Pessoa(int codigoPessoa, String nome, Endereco endereco, String dtNascimento, String email) {
+	public Pessoa(int codigoPessoa, String nome, Endereco endereco, String dtNascimento, String email, Telefone telefone) {
 		super();
 		this.codigoPessoa = codigoPessoa;
 		this.nome = nome;
 		this.endereco = endereco;
 		this.dtNascimento = dtNascimento;
 		this.email = email;
+		this.telefone = telefone;
 	}
 
-	public Pessoa(String nome, Endereco endereco, String dtNascimento, String email) {
+	public Pessoa(String nome, Endereco endereco, String dtNascimento, String email, Telefone telefone) {
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
 		this.dtNascimento = dtNascimento;
 		this.email = email;
+		this.telefone = telefone;
+
 	}
 
 	public int getCodigoPessoa() {
@@ -66,6 +70,14 @@ public class Pessoa {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Telefone getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
 	}
 
 }

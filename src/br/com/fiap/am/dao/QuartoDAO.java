@@ -3,11 +3,11 @@ package br.com.fiap.am.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.am.beans.Quarto;
+import br.com.fiap.am.beans.TipoQuarto;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
@@ -26,15 +26,20 @@ public class QuartoDAO {
 		try {
 			List<Quarto> quarto = new ArrayList<Quarto>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT T_AM_DFA_QUARTO");
+					.prepareStatement("SELECT FROM * T_AM_DFA_QUARTO");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
 				Quarto quar  = new Quarto();
-				quar.setCodigoQuarto(rs.getInt("codigoQuarto"));
-				quar.setNrQuarto(rs.getInt("nrQuarto"));
-				quar.setAndar(rs.getInt("nrQuarto"));
-				quar.setCapacidade(rs.getInt("nrQuarto"));
+				quar.setNrQuarto(rs.getInt("NR_QUARTO"));
+				quar.setAndar(rs.getInt("NR_ANDAR"));
+				quar.setCapacidade(rs.getInt("NR_CAPACIDADE"));
+				
+				TipoQuarto tp = new TipoQuarto();
+				tp.setCodigoTipoQuarto(rs.getInt("CD_TIPO_QUARTO"));
+
+				quarto.add(quar);
+
 
 
 			}
