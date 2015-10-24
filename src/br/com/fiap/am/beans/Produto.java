@@ -3,23 +3,23 @@ package br.com.fiap.am.beans;
 public class Produto {
 	private int codigoProduto;
 	private String descricaoProduto;
-	private String tipo;
+	private int nrTipo;
 
 	public Produto() {
 		super();
 	}
 
-	public Produto(int codigoProduto, String descricaoProduto, String tipo) {
+	public Produto(int codigoProduto, String descricaoProduto, int nrTipo) {
 		super();
 		this.codigoProduto = codigoProduto;
 		this.descricaoProduto = descricaoProduto;
-		this.tipo = tipo;
+		this.setNrTipo(nrTipo);
 	}
 
-	public Produto(String descricaoProduto, String tipo) {
+	public Produto(String descricaoProduto, int nrTipo) {
 		super();
 		this.descricaoProduto = descricaoProduto;
-		this.tipo = tipo;
+		this.setNrTipo(nrTipo);
 	}
 
 	public int getCodigoProduto() {
@@ -38,12 +38,12 @@ public class Produto {
 		this.descricaoProduto = descricaoProduto;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public int getNrTipo() {
+		return nrTipo;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setNrTipo(int nrTipo) {
+		this.nrTipo = nrTipo;
 	}
 
 }

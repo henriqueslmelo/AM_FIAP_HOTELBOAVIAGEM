@@ -2,24 +2,24 @@ package br.com.fiap.am.beans;
 
 public class Servico {
 	private int codigoServico;
-	private String descricaoservico;
-	private String tipo;
+	private String descricaoServico;
+	private int nrTipo;
 
 	public Servico() {
 		super();
 	}
 
-	public Servico(int codigoServico, String descricaoservico, String tipo) {
+	public Servico(int codigoServico, String descricaoServico, int nrTipo) {
 		super();
 		this.codigoServico = codigoServico;
-		this.descricaoservico = descricaoservico;
-		this.tipo = tipo;
+		this.descricaoServico = descricaoServico;
+		this.setNrTipo(nrTipo);
 	}
 
-	public Servico(String descricaoservico, String tipo) {
+	public Servico(String descricaoServico, int nrTipo) {
 		super();
-		this.descricaoservico = descricaoservico;
-		this.tipo = tipo;
+		this.descricaoServico = descricaoServico;
+		this.setNrTipo(nrTipo);
 	}
 
 	public int getCodigoServico() {
@@ -30,20 +30,21 @@ public class Servico {
 		this.codigoServico = codigoServico;
 	}
 
-	public String getDescricaoservico() {
-		return descricaoservico;
+	public String getDescricaoServico() {
+		return descricaoServico;
 	}
 
-	public void setDescricaoservico(String descricaoservico) {
-		this.descricaoservico = descricaoservico;
+	public void setDescricaoServico(String descricaoServico) {
+		this.descricaoServico = descricaoServico;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public int getNrTipo() {
+		return nrTipo;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setNrTipo(int nrTipo) {
+		this.nrTipo = nrTipo;
 	}
+
 
 }

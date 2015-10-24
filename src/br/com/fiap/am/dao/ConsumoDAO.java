@@ -12,8 +12,8 @@ import br.com.fiap.am.beans.ReservaQuarto;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
-public class HospedagemDAO {
-	
+public class ConsumoDAO {
+
 	// conexao
 	private Connection connection;
 
@@ -123,7 +123,5 @@ public class HospedagemDAO {
 		}
 
 	}
-
-	
 
 }
