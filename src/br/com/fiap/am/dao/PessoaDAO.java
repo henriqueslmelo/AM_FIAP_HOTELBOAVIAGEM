@@ -6,39 +6,34 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.am.beans.Funcionario;
 import br.com.fiap.am.beans.Pessoa;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
-public class FuncionarioDAO {
+public class PessoaDAO {
 
-	// conexao
 	private Connection connection;
 
-	public FuncionarioDAO() throws Excecao {
+	public PessoaDAO() throws Excecao {
 		this.connection = new Conexao().getConnection();
 	}
 
 	// LISTAR
-	public List<Funcionario> getLista() throws Excecao {
+	public List<Pessoa> getLista() throws Excecao {
 		try {
-			List<Funcionario> funcionario = new ArrayList<Funcionario>();
+			List<Pessoa> pessoa = new ArrayList<Pessoa>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_FUNCIONARIO");
+					.prepareStatement("SELECT FROM * T_AM_DFA_CLIENTE");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				Funcionario func = new Funcionario();
-				func.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
-				func.setDtAdmissao(rs.getString("DT_ADIMISSAO"));
-				func.setCargo(rs.getString("DS_CARGO"));
-				func.setNome(rs.getString("NM_PESSOA"));
-
+				Pessoa pe = new Pessoa();
+				pe.setCodigoPessoa(rs.getInt("CD_PESSOA"));
+				pe.setNome(rs.getString("NM_PESSOA"));
 			}
 			rs.close();
 			stmt.close();
-			return funcionario;
+			return pessoa;
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
 		} finally {

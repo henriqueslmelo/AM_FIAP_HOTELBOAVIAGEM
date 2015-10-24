@@ -6,39 +6,43 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.am.beans.Funcionario;
+import br.com.fiap.am.beans.Cliente;
 import br.com.fiap.am.beans.Pessoa;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
-public class FuncionarioDAO {
+public class ClienteDAO {
 
 	// conexao
 	private Connection connection;
 
-	public FuncionarioDAO() throws Excecao {
+	public ClienteDAO() throws Excecao {
 		this.connection = new Conexao().getConnection();
 	}
 
 	// LISTAR
-	public List<Funcionario> getLista() throws Excecao {
+	public List<Cliente> getLista() throws Excecao {
 		try {
-			List<Funcionario> funcionario = new ArrayList<Funcionario>();
+			List<Cliente> cliente = new ArrayList<Cliente>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_FUNCIONARIO");
+					.prepareStatement("SELECT FROM * T_AM_DFA_CLIENTE");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				Funcionario func = new Funcionario();
-				func.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
-				func.setDtAdmissao(rs.getString("DT_ADIMISSAO"));
-				func.setCargo(rs.getString("DS_CARGO"));
-				func.setNome(rs.getString("NM_PESSOA"));
+				Cliente cl = new Cliente();
+				cl.setCodigoCliente(rs.getInt("CD_CLIENTE"));
+				cl.setCpf(rs.getString("NR_CPF"));
+				cl.setRg(rs.getString("NR_RG"));
+				cl.setQuartoPreferido(rs.getInt("NR_QUARTO_PREFERIDO"));
+				cl.setDsSenha(rs.getString("DS_SENHA"));
+				cl.setDtNascimento(rs.getString("DT_NASCIMENTO"));
+				cl.setEmail(rs.getString("DS_EMAIL"));
+				cl.setNome(rs.getString("NM_PESSOA"));
 
 			}
 			rs.close();
 			stmt.close();
-			return funcionario;
+			return cliente;
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
 		} finally {

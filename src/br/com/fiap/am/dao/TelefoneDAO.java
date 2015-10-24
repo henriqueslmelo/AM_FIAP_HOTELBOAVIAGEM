@@ -6,39 +6,37 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.am.beans.Funcionario;
-import br.com.fiap.am.beans.Pessoa;
+import br.com.fiap.am.beans.Telefone;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
-public class FuncionarioDAO {
+public class TelefoneDAO {
 
 	// conexao
 	private Connection connection;
 
-	public FuncionarioDAO() throws Excecao {
+	public TelefoneDAO() throws Excecao {
 		this.connection = new Conexao().getConnection();
 	}
 
 	// LISTAR
-	public List<Funcionario> getLista() throws Excecao {
+	public List<Telefone> getLista() throws Excecao {
 		try {
-			List<Funcionario> funcionario = new ArrayList<Funcionario>();
+			List<Telefone> telefone = new ArrayList<Telefone>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_FUNCIONARIO");
+					.prepareStatement("SELECT FROM * T_AM_DFA_TELEFONE");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				Funcionario func = new Funcionario();
-				func.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
-				func.setDtAdmissao(rs.getString("DT_ADIMISSAO"));
-				func.setCargo(rs.getString("DS_CARGO"));
-				func.setNome(rs.getString("NM_PESSOA"));
+				Telefone tel = new Telefone();
+				tel.setNumero(rs.getInt("NR_TELEFONE"));
+				tel.setDdd(rs.getInt("NR_DDD"));
+				tel.setTipoTelefone(rs.getString("DS_TIPO_TELEFONE"));
 
 			}
 			rs.close();
 			stmt.close();
-			return funcionario;
+			return telefone;
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
 		} finally {

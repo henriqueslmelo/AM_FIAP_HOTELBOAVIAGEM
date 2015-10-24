@@ -6,39 +6,42 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.am.beans.Funcionario;
-import br.com.fiap.am.beans.Pessoa;
+import br.com.fiap.am.beans.Endereco;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
-public class FuncionarioDAO {
+public class EnderecoDAO {
 
 	// conexao
 	private Connection connection;
 
-	public FuncionarioDAO() throws Excecao {
+	public EnderecoDAO() throws Excecao {
 		this.connection = new Conexao().getConnection();
 	}
 
 	// LISTAR
-	public List<Funcionario> getLista() throws Excecao {
+	public List<Endereco> getLista() throws Excecao {
 		try {
-			List<Funcionario> funcionario = new ArrayList<Funcionario>();
+			List<Endereco> endereco = new ArrayList<Endereco>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_FUNCIONARIO");
+					.prepareStatement("SELECT FROM * T_AM_DFA_PESSOA_ENDE");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				Funcionario func = new Funcionario();
-				func.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
-				func.setDtAdmissao(rs.getString("DT_ADIMISSAO"));
-				func.setCargo(rs.getString("DS_CARGO"));
-				func.setNome(rs.getString("NM_PESSOA"));
+				Endereco end = new Endereco();
+				end.setLogradouro(rs.getString("DS_DESCRICAO"));
+				end.setTipoLogradouro(rs.getString("DS_TIPO_LOGRADOURO"));
+				end.setNumero(rs.getInt("NR_LOGRADOURO"));
+				end.setEstado(rs.getString("DS_ESTADO"));
+				end.setCidade(rs.getString("NM_CIDADE"));
+				end.setBairro(rs.getString("NM_BAIRRO"));
+				end.setCep(rs.getInt("NR_CEP"));
+				end.setComplemento(rs.getString("DS_COMPLEMENTO"));
 
 			}
 			rs.close();
 			stmt.close();
-			return funcionario;
+			return endereco;
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
 		} finally {
