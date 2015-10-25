@@ -7,13 +7,16 @@ public class Consumo {
 	private Funcionario funcionario;
 	private Produto produto;
 	private Servico servico;
+	private String dataConsumo;
+
+	
 
 	public Consumo() {
 		super();
 	}
 
 	public Consumo(int codigoConsumo, int quantidade, Hospedagem hospedagem, Funcionario funcionario, Produto produto,
-			Servico servico) {
+			Servico servico, String dataConsumo) {
 		super();
 		this.codigoConsumo = codigoConsumo;
 		this.quantidade = quantidade;
@@ -21,17 +24,19 @@ public class Consumo {
 		this.funcionario = funcionario;
 		this.produto = produto;
 		this.servico = servico;
+		this.dataConsumo = dataConsumo;
 	}
 
-	public Consumo(int quantidade, Hospedagem hospedagem, Funcionario funcionario, Servico servico) {
+	public Consumo(int quantidade, Hospedagem hospedagem, Funcionario funcionario, Servico servico, String dataConsumo) {
 		super();
 		this.quantidade = quantidade;
 		this.hospedagem = hospedagem;
 		this.funcionario = funcionario;
 		this.servico = servico;
+		this.dataConsumo = dataConsumo;
 	}
 
-	public Consumo(int quantidade, Hospedagem hospedagem, Funcionario funcionario, Produto produto) {
+	public Consumo(int quantidade, Hospedagem hospedagem, Funcionario funcionario, Produto produto, String dataConsumo) {
 		super();
 		this.quantidade = quantidade;
 		this.hospedagem = hospedagem;
@@ -39,22 +44,24 @@ public class Consumo {
 		this.produto = produto;
 	}
 
-	public Consumo(int codigoConsumo, int quantidade, Hospedagem hospedagem, Funcionario funcionario, Produto produto) {
+	public Consumo(int codigoConsumo, int quantidade, Hospedagem hospedagem, Funcionario funcionario, Produto produto, String dataConsumo) {
 		super();
 		this.codigoConsumo = codigoConsumo;
 		this.quantidade = quantidade;
 		this.hospedagem = hospedagem;
 		this.funcionario = funcionario;
 		this.produto = produto;
+		this.dataConsumo = dataConsumo;
 	}
 
-	public Consumo(int codigoConsumo, int quantidade, Hospedagem hospedagem, Funcionario funcionario, Servico servico) {
+	public Consumo(int codigoConsumo, int quantidade, Hospedagem hospedagem, Funcionario funcionario, Servico servico, String dataConsumo) {
 		super();
 		this.codigoConsumo = codigoConsumo;
 		this.quantidade = quantidade;
 		this.hospedagem = hospedagem;
 		this.funcionario = funcionario;
 		this.servico = servico;
+		this.dataConsumo = dataConsumo;
 	}
 
 	public int getCodigoConsumo() {
@@ -103,6 +110,14 @@ public class Consumo {
 
 	public void setServico(Servico servico) {
 		this.servico = servico;
+	}
+
+	public String getDataConsumo() {
+		return dataConsumo;
+	}
+
+	public void setDataConsumo(String dataConsumo) {
+		this.dataConsumo = dataConsumo;
 	}
 
 }

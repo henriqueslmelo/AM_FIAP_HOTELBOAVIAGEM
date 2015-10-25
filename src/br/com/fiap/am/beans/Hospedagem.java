@@ -3,26 +3,34 @@ package br.com.fiap.am.beans;
 public class Hospedagem {
 	private int codigoHospedagem;
 	private double desconto;
-	private Reserva reserva;
-	private Funcionario funcionario;
+	private Reserva codigoReserva;
+	private Funcionario codigoFuncionario;
+	private Cliente codigoCliente;
 
 	public Hospedagem() {
 		super();
 	}
 
-	public Hospedagem(int codigoHospedagem, double desconto, Reserva reserva, Funcionario funcionario) {
+	public Hospedagem(int codigoHospedagem, double desconto,
+			Reserva codigoReserva, Funcionario codigoFuncionario,
+			Cliente codigoCliente) {
 		super();
 		this.codigoHospedagem = codigoHospedagem;
 		this.desconto = desconto;
-		this.reserva = reserva;
-		this.funcionario = funcionario;
+		this.codigoReserva = codigoReserva;
+		this.codigoFuncionario = codigoFuncionario;
+		this.codigoCliente = codigoCliente;
+
 	}
 
-	public Hospedagem(double desconto, Reserva reserva, Funcionario funcionario) {
+	public Hospedagem(double desconto,
+			Reserva codigoReserva, Funcionario codigoFuncionario,
+			Cliente codigoCliente) {
 		super();
 		this.desconto = desconto;
-		this.reserva = reserva;
-		this.funcionario = funcionario;
+		this.codigoReserva = codigoReserva;
+		this.codigoFuncionario = codigoFuncionario;
+		this.codigoCliente = codigoCliente;
 	}
 
 	public int getCodigoHospedagem() {
@@ -41,20 +49,29 @@ public class Hospedagem {
 		this.desconto = desconto;
 	}
 
-	public Reserva getReserva() {
-		return reserva;
+	public Reserva getCodigoReserva() {
+		return codigoReserva;
 	}
 
-	public void setReserva(Reserva reserva) {
-		this.reserva = reserva;
+	public void setCodigoReserva(Reserva codigoReserva) {
+		this.codigoReserva = codigoReserva;
 	}
 
-	public Funcionario getFuncionario() {
-		return funcionario;
+	public Funcionario getCodigoFuncionario() {
+		return codigoFuncionario;
 	}
 
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
+	public void setCodigoFuncionario(Funcionario codigoFuncionario) {
+		this.codigoFuncionario = codigoFuncionario;
+	}
+
+
+	public Cliente getCodigoCliente() {
+		return codigoCliente;
+	}
+
+	public void setCodigoCliente(Cliente codigoCliente) {
+		this.codigoCliente = codigoCliente;
 	}
 
 }

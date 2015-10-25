@@ -7,31 +7,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.am.beans.Cliente;
-import br.com.fiap.am.beans.Reserva;
+import br.com.fiap.am.beans.Funcionario;
+import br.com.fiap.am.beans.Hospedagem;
 import br.com.fiap.am.beans.ReservaQuarto;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
 public class HospedagemDAO {
-	
+
 	// conexao
 	private Connection connection;
 
-	public ReservaDAO() throws Excecao {
+	public HospedagemDAO() throws Excecao {
 		this.connection = new Conexao().getConnection();
 	}
 
-	public void inserir(Reserva reserva) throws Exception {
-		String sql = "INSERT INTO T_AM_DFAB_RESERVA"
-				+ "(DT_ENTRADA, DT_SAIDA, QT_ADULTO, QT_CRIANCA,ST_RESERVA) values (?,?,?,?,?)";
+	public void registrar(Hospedagem hospedagem) throws Exception {
+		String sql = "INSERT INTO T_AM_DFAB_HOSPEDAGEM"
+				+ "(DT_ENTRADA, DT_SAIDA, QT_ADULTO, QT_CRIANCA,ST_RESERVA) values (?,?,?,?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
-			stmt.setString(1, reserva.getDtEntrada());
-			stmt.setString(2, reserva.getDtSaida());
-			stmt.setInt(3, reserva.getQtdeHospedesAdultos());
-			stmt.setInt(4, reserva.getQtdeHospedesCriancas());
-			stmt.setString(5, reserva.getSituacaoReserva());
-			
+			stmt.setInt(1, hospedagem.getCodigoFuncionario());
+			stmt.setInt(2, hospedagem.getCodigoCliente());
+			stmt.setInt(3, hospedagem.getCodigoReserva());
+			stmt.setDouble(4, hospedagem.getDesconto());
+
 			stmt.execute();
 			stmt.close();
 		} catch (Exception e) {
@@ -47,36 +47,33 @@ public class HospedagemDAO {
 	}
 
 	// LISTAR
-	public List<Reserva> getLista() throws Excecao {
+	public List<Hospedagem> getLista() throws Excecao {
 		try {
-			List<Reserva> reserva = new ArrayList<Reserva>();
+			List<Hospedagem> hospedagem = new ArrayList<Hospedagem>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT * FROM T_AM_DFA_RESERVA A INNER JOIN T_AM_DFA_RESERVA_QUARTO B ON (A.CD_RESERVA = B.CD_RESERVA)");
+					.prepareStatement("SELECT * FROM T_AM_DFA_HOSPEDAGEM)");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				Reserva reserv = new Reserva();
-				reserv.setCodigoReserva(rs.getInt("CD_RESERVA"));
-				reserv.setDtEntrada(rs.getString("DT_INICIO_RESERVA"));
-				reserv.setDtSaida(rs.getString("DT_FINAL_RESERVA"));
-				reserv.setQtdeHospedesAdultos(rs.getInt("QT_ADULTO"));
-				reserv.setQtdeHospedesCriancas(rs.getInt("QT_CRIANCA"));
-				reserv.setSituacaoReserva(rs.getString("ST_RESERVA"));
-				reserv.setDtSolicitação(rs.getString("DT_SOLICITACAO"));
+				Hospedagem hosp = new Hospedagem();
+				hosp.setCodigoHospedagem(rs.getInt("CD_HOSPEDAGEM"));
+				hosp.setDesconto(rs.getDouble("VC_PERC_DESCONTO"));
 
 				ReservaQuarto quar = new ReservaQuarto();
-				quar.setNrQuarto(rs.getInt("NR_QUARTO"));
-				
+				quar.setNrQuarto(rs.getInt("CD_RESERVA"));
+
 				Cliente cl = new Cliente();
 				cl.setCodigoCliente(rs.getInt("CD_CLIENTE"));
-				cl.setNome(rs.getString("NM_PESSOA"));
 
-				reserva.add(reserv);
+				Funcionario fun = new Funcionario();
+				fun.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
+
+				hospedagem.add(hosp);
 
 			}
 			rs.close();
 			stmt.close();
-			return reserva;
+			return hospedagem;
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
 		} finally {
@@ -88,42 +85,5 @@ public class HospedagemDAO {
 		}
 
 	}
-
-	// ALTERAR
-
-	public void alterar(Reserva reserva) throws Excecao {
-		String sql = "UPDATE T_AM_DFA_RESERVA SET DT_INICIO_RESERVA=?, DT_FINAL_RESERVA=?,"
-				+ "QT_ADULTO=?, QT_CRIANCA=?, ST_RESERVA=? WHERE CD_RESERVA=?";
-		try {
-			PreparedStatement stmt = connection.prepareStatement(sql);
-			stmt.setString(1, reserva.getDtEntrada());
-			stmt.setString(2, reserva.getDtSaida());
-			stmt.setInt(3, reserva.getQtdeHospedesAdultos());
-			stmt.setInt(4, reserva.getQtdeHospedesCriancas());
-			stmt.setString(5, reserva.getDtSolicitação());
-			stmt.executeUpdate();
-			stmt.close();
-		} catch (Exception e) {
-			throw new Excecao("Ocorreu um erro", e);
-		}
-	}
-
-	// DELETAR
-	public void excluir(Reserva reserva) throws Excecao {
-		try {
-			PreparedStatement stmt = connection
-					.prepareStatement("DELETE FROM T_AM_DFA_RESERVA"
-							+ "WHERE CD_RESERVA=?");
-
-			stmt.setInt(1, reserva.getCodigoReserva());
-			stmt.executeUpdate();
-			stmt.close();
-		} catch (Exception e) {
-			throw new Excecao("Ocorreu um erro", e);
-		}
-
-	}
-
-	
 
 }

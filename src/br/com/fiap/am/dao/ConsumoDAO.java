@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.am.beans.Cliente;
-import br.com.fiap.am.beans.Reserva;
-import br.com.fiap.am.beans.ReservaQuarto;
+import br.com.fiap.am.beans.Consumo;
+import br.com.fiap.am.beans.Funcionario;
+import br.com.fiap.am.beans.Hospedagem;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
@@ -17,20 +18,24 @@ public class ConsumoDAO {
 	// conexao
 	private Connection connection;
 
-	public ReservaDAO() throws Excecao {
+	public ConsumoDAO() throws Excecao {
 		this.connection = new Conexao().getConnection();
 	}
 
-	public void inserir(Reserva reserva) throws Exception {
-		String sql = "INSERT INTO T_AM_DFAB_RESERVA"
-				+ "(DT_ENTRADA, DT_SAIDA, QT_ADULTO, QT_CRIANCA,ST_RESERVA) values (?,?,?,?,?)";
+	public void registar(Consumo consumo) throws Exception {
+		String sql = "INSERT INTO T_AM_DFAB_CONSUMO"
+				+ "(CD_CONSUMO, CD_HOSPEDAGEM, CD_TIPO_SERVICO, CD_FUNCIONARIO, DT_CONSUMO, QT_CONSUMO) values (?,?,?,?,?,?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
-			stmt.setString(1, reserva.getDtEntrada());
-			stmt.setString(2, reserva.getDtSaida());
-			stmt.setInt(3, reserva.getQtdeHospedesAdultos());
-			stmt.setInt(4, reserva.getQtdeHospedesCriancas());
-			stmt.setString(5, reserva.getSituacaoReserva());
+			stmt.setInt(1, consumo.getCodigoConsumo());
+			stmt.setInt(2, consumo.getHospedagem());
+			stmt.setInt(3, consumo.getProduto());
+			stmt.setInt(4, consumo.getServico());
+			stmt.setnt(5, consumo.getFuncionario());
+			stmt.setString(6, consumo.getDataConsumo());
+			stmt.setInt(6, consumo.getQuantidade());
+
+
 			
 			stmt.execute();
 			stmt.close();
@@ -47,36 +52,31 @@ public class ConsumoDAO {
 	}
 
 	// LISTAR
-	public List<Reserva> getLista() throws Excecao {
+	public List<Consumo> getLista() throws Excecao {
 		try {
-			List<Reserva> reserva = new ArrayList<Reserva>();
+			List<Consumo> consumo = new ArrayList<Consumo>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT * FROM T_AM_DFA_RESERVA A INNER JOIN T_AM_DFA_RESERVA_QUARTO B ON (A.CD_RESERVA = B.CD_RESERVA)");
+					.prepareStatement("SELECT * FROM T_AM_DFA_CONSUMO");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				Reserva reserv = new Reserva();
-				reserv.setCodigoReserva(rs.getInt("CD_RESERVA"));
-				reserv.setDtEntrada(rs.getString("DT_INICIO_RESERVA"));
-				reserv.setDtSaida(rs.getString("DT_FINAL_RESERVA"));
-				reserv.setQtdeHospedesAdultos(rs.getInt("QT_ADULTO"));
-				reserv.setQtdeHospedesCriancas(rs.getInt("QT_CRIANCA"));
-				reserv.setSituacaoReserva(rs.getString("ST_RESERVA"));
-				reserv.setDtSolicitação(rs.getString("DT_SOLICITACAO"));
-
-				ReservaQuarto quar = new ReservaQuarto();
-				quar.setNrQuarto(rs.getInt("NR_QUARTO"));
+				Consumo con = new Consumo();
+				con.setCodigoConsumo(rs.getInt("CD_CONSUMO"));
+				con.setQuantidade(rs.getInt("QT_CONSUMO"));
+				con.setDataConsumo(rs.getString("DT_CONSUMO"));
 				
-				Cliente cl = new Cliente();
-				cl.setCodigoCliente(rs.getInt("CD_CLIENTE"));
-				cl.setNome(rs.getString("NM_PESSOA"));
+				Hospedagem hosp = new Hospedagem();
+				hosp.setCodigoHospedagem(rs.getInt("CD_HOSPEDAGEM"));
 
-				reserva.add(reserv);
+				Funcionario fun = new Funcionario();
+				fun.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
+
+				consumo.add(con);
 
 			}
 			rs.close();
 			stmt.close();
-			return reserva;
+			return consumo;
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
 		} finally {
@@ -91,16 +91,19 @@ public class ConsumoDAO {
 
 	// ALTERAR
 
-	public void alterar(Reserva reserva) throws Excecao {
-		String sql = "UPDATE T_AM_DFA_RESERVA SET DT_INICIO_RESERVA=?, DT_FINAL_RESERVA=?,"
-				+ "QT_ADULTO=?, QT_CRIANCA=?, ST_RESERVA=? WHERE CD_RESERVA=?";
+	public void alterar(Consumo consumo) throws Excecao {
+		String sql = "UPDATE T_AM_DFA_CONSUMO SET CD_HOSPEDAGEM=?, CD_TIPO_SERVICO=?,"
+				+ "CD_FUNCIONARIO=?, DT_CONSUMO=?, QT_CONSUMO=? WHERE CD_CONSUMO=?";
+		
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			stmt.setString(1, reserva.getDtEntrada());
-			stmt.setString(2, reserva.getDtSaida());
-			stmt.setInt(3, reserva.getQtdeHospedesAdultos());
-			stmt.setInt(4, reserva.getQtdeHospedesCriancas());
-			stmt.setString(5, reserva.getDtSolicitação());
+			stmt.setInt(1, consumo.getCodigoConsumo());
+			stmt.setInt(2, consumo.getHospedagem());
+			stmt.setInt(3, consumo.getProduto());
+			stmt.setInt(4, consumo.getServico());
+			stmt.setnt(5, consumo.getFuncionario());
+			stmt.setString(6, consumo.getDataConsumo());
+			stmt.setInt(6, consumo.getQuantidade());
 			stmt.executeUpdate();
 			stmt.close();
 		} catch (Exception e) {
@@ -109,13 +112,13 @@ public class ConsumoDAO {
 	}
 
 	// DELETAR
-	public void excluir(Reserva reserva) throws Excecao {
+	public void excluir(Consumo consumo) throws Excecao {
 		try {
 			PreparedStatement stmt = connection
-					.prepareStatement("DELETE FROM T_AM_DFA_RESERVA"
-							+ "WHERE CD_RESERVA=?");
+					.prepareStatement("DELETE FROM T_AM_DFA_CONSUMO"
+							+ "WHERE CD_CONSUMO=?");
 
-			stmt.setInt(1, reserva.getCodigoReserva());
+			stmt.setInt(1, consumo.getCodigoConsumo());
 			stmt.executeUpdate();
 			stmt.close();
 		} catch (Exception e) {
