@@ -1,6 +1,5 @@
 package br.com.fiap.am.teste;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import br.com.fiap.am.beans.Reserva;

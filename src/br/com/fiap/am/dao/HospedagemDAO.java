@@ -13,6 +13,7 @@ import br.com.fiap.am.beans.Reserva;
 import br.com.fiap.am.beans.ReservaQuarto;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
+import br.com.fiap.tageando.beans.BeneficiarioBeans;
 
 public class HospedagemDAO {
 
@@ -29,13 +30,18 @@ public class HospedagemDAO {
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			stmt.setInt(1, hospedagem.getNrQuarto());
-			stmt.setInt(2, hospedagem.getCodigoReserva());
-			stmt.setInt(3, hospedagem.getCodigoCliente());
-			stmt.setInt(4, hospedagem.getCodigoFuncionario());
-			stmt.setString(5, hospedagem.getDataEntrada());
-			stmt.setString(6, hospedagem.getDataSaida());
-			stmt.setDouble(7, hospedagem.getDesconto());
+			stmt.setString(2, hospedagem.getDataEntrada());
+			stmt.setString(3, hospedagem.getDataSaida());
+			stmt.setDouble(4, hospedagem.getDesconto());
 
+			ReservaQuarto quar = new ReservaQuarto();
+			stmt.setInt(5, quar.getNrQuarto());
+
+			Cliente cl = new Cliente();
+			stmt.setInt(6, cl.getCodigoCliente());
+
+			Funcionario fun = new Funcionario();
+			stmt.setInt(7, fun.getCodigoFuncionario());
 
 			stmt.execute();
 			stmt.close();
@@ -92,7 +98,43 @@ public class HospedagemDAO {
 				throw new Excecao("Ocorreu um erro", e);
 			}
 		}
+		
+	}
+		
+		//PESQUISAR
+		
+		public Hospedagem Pesquisar(int Codigo) throws Exception {
+			Hospedagem hospedagem = new Hospedagem();
+			PreparedStatement stmt = this.connection
+					.prepareStatement("SELECT * T_AM_DFA_HOSPEDAGEM WHERE CD_HOSPEDAGEM = ?");
+			stmt.setInt(1, Codigo);
+			ResultSet rs= stmt.executeQuery();
+	        try{
+			if (rs.next()) {
+				hospedagem.setCodigoHospedagem(rs.getInt("CD_HOSPEDAGEM"));
+				hospedagem.setDesconto(rs.getDouble("VC_PERC_DESCONTO"));
+
+				Reserva res = new Reserva();
+				res.setCodigoReserva(rs.getInt("CD_RESERVA"));
+				
+				ReservaQuarto rq = new ReservaQuarto();
+				rq.setNrQuarto(rs.getInt("NR_QUARTO"));
+
+				
+				Cliente cl = new Cliente();
+				cl.setCodigoCliente(rs.getInt("CD_CLIENTE"));
+
+				Funcionario fun = new Funcionario();
+				fun.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
+
+		}
+			rs.close();
+			stmt.close();
+			return hospedagem;
+		} catch (Exception e) {
+			throw new Exception("Codigo Incorreto");
+		}
+	 }
 
 	}
 
-}
