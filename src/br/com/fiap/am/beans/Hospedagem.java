@@ -6,6 +6,11 @@ public class Hospedagem {
 	private Reserva codigoReserva;
 	private Funcionario codigoFuncionario;
 	private Cliente codigoCliente;
+	private String dataEntrada;
+	private String dataSaida;
+	private int nrQuarto;
+
+	
 
 	public Hospedagem() {
 		super();
@@ -13,24 +18,34 @@ public class Hospedagem {
 
 	public Hospedagem(int codigoHospedagem, double desconto,
 			Reserva codigoReserva, Funcionario codigoFuncionario,
-			Cliente codigoCliente) {
+			Cliente codigoCliente, String dataEntrada,
+	String dataSaida, int nrQuarto) {
 		super();
 		this.codigoHospedagem = codigoHospedagem;
 		this.desconto = desconto;
 		this.codigoReserva = codigoReserva;
 		this.codigoFuncionario = codigoFuncionario;
 		this.codigoCliente = codigoCliente;
+		this.dataEntrada = dataEntrada;
+		this.dataSaida = dataSaida;
+		this.nrQuarto = nrQuarto;
 
 	}
 
 	public Hospedagem(double desconto,
 			Reserva codigoReserva, Funcionario codigoFuncionario,
-			Cliente codigoCliente) {
+			Cliente codigoCliente, String dataEntrada,
+	 String dataSaida, int nrQuarto) {
 		super();
 		this.desconto = desconto;
 		this.codigoReserva = codigoReserva;
 		this.codigoFuncionario = codigoFuncionario;
 		this.codigoCliente = codigoCliente;
+		this.dataEntrada = dataEntrada;
+		this.dataSaida = dataSaida;
+		this.nrQuarto = nrQuarto;
+
+
 	}
 
 	public int getCodigoHospedagem() {
@@ -72,6 +87,30 @@ public class Hospedagem {
 
 	public void setCodigoCliente(Cliente codigoCliente) {
 		this.codigoCliente = codigoCliente;
+	}
+
+	public String getDataEntrada() {
+		return dataEntrada;
+	}
+
+	public void setDataEntrada(String dataEntrada) {
+		this.dataEntrada = dataEntrada;
+	}
+
+	public String getDataSaida() {
+		return dataSaida;
+	}
+
+	public void setDataSaida(String dataSaida) {
+		this.dataSaida = dataSaida;
+	}
+
+	public int getNrQuarto() {
+		return nrQuarto;
+	}
+
+	public void setNrQuarto(int nrQuarto) {
+		this.nrQuarto = nrQuarto;
 	}
 
 }

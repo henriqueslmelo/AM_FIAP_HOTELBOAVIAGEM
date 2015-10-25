@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.am.beans.Cliente;
 import br.com.fiap.am.beans.Consumo;
 import br.com.fiap.am.beans.Funcionario;
 import br.com.fiap.am.beans.Hospedagem;

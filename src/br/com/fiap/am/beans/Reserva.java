@@ -6,7 +6,7 @@ public class Reserva {
 	private String dtSaida;
 	private int qtdeHospedesAdultos;
 	private int qtdeHospedesCriancas;
-	private Quarto quarto;
+	private ReservaQuarto nrQuarto;
 	private Cliente cliente;
 	private String situacaoReserva;
 	private String dtSolicitação;
@@ -16,27 +16,27 @@ public class Reserva {
 	}
 
 	public Reserva(int codigoReserva, String dtEntrada, String dtSaida, int qtdeHospedesAdultos,
-			int qtdeHospedesCriancas, Quarto quarto, Cliente cliente, String situacaoReserva, String dtSolicitação) {
+			int qtdeHospedesCriancas, ReservaQuarto nrQuarto, Cliente cliente, String situacaoReserva, String dtSolicitação) {
 		super();
 		this.codigoReserva = codigoReserva;
 		this.dtEntrada = dtEntrada;
 		this.dtSaida = dtSaida;
 		this.qtdeHospedesAdultos = qtdeHospedesAdultos;
 		this.qtdeHospedesCriancas = qtdeHospedesCriancas;
-		this.quarto = quarto;
+		this.nrQuarto = nrQuarto;
 		this.cliente = cliente;
 		this.situacaoReserva = situacaoReserva;
 		this.dtSolicitação = dtSolicitação;
 	}
 
-	public Reserva(String dtEntrada, String dtSaida, int qtdeHospedesAdultos, int qtdeHospedesCriancas, Quarto quarto,
+	public Reserva(String dtEntrada, String dtSaida, int qtdeHospedesAdultos, int qtdeHospedesCriancas, ReservaQuarto nrQuarto,
 			Cliente cliente) {
 		super();
 		this.dtEntrada = dtEntrada;
 		this.dtSaida = dtSaida;
 		this.qtdeHospedesAdultos = qtdeHospedesAdultos;
 		this.qtdeHospedesCriancas = qtdeHospedesCriancas;
-		this.quarto = quarto;
+		this.nrQuarto = nrQuarto;
 		this.cliente = cliente;
 	}
 
@@ -80,12 +80,12 @@ public class Reserva {
 		this.qtdeHospedesCriancas = qtdeHospedesCriancas;
 	}
 
-	public Quarto getQuarto() {
-		return quarto;
+	public ReservaQuarto getReservaQuarto() {
+		return nrQuarto;
 	}
 
-	public void setQuarto(Quarto quarto) {
-		this.quarto = quarto;
+	public void setReservaQuarto(ReservaQuarto nrQuarto) {
+		this.nrQuarto = nrQuarto;
 	}
 
 	public Cliente getCliente() {
