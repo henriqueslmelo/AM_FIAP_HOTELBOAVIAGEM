@@ -1,5 +1,19 @@
 package br.com.fiap.am.dao;
 
+/**
+ * Classe para acesso ao banco de dados do tipo Funcionario, onde serão contido os metodos do CRUD * 
+ * 
+ * @see classe funcionario relacionada a essa classe
+ * @see classe conexao relacionada a esta classes
+ * @see classe excecao relacionada a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.am.beans.Funcionario;
-import br.com.fiap.am.beans.Pessoa;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 

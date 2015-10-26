@@ -1,5 +1,23 @@
 package br.com.fiap.am.dao;
 
+/**
+ * Classe para acesso ao banco de dados do tipo ConsumoDAO, onde serão contido os metodos do CRUD * 
+ * 
+ * @see classe Hospedagem relacionada a essa classe
+ * @see classe Consumo relacionada a essa classe
+ * @see classe Produto relacionada a essa classe
+ * @see classe Servico relacionada a essa classe
+ * @see classe funcionario relacionada a essa classe
+ * @see classe conexao relacionada a esta classes
+ * @see classe excecao relacionada a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
