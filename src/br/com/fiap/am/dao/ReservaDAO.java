@@ -63,7 +63,7 @@ public class ReservaDAO {
 		try {
 			List<Reserva> reserva = new ArrayList<Reserva>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM T_AM_DFA_RESERVA A INNER JOIN T_AM_DFA_RESERVA_QUARTO B ON (A.CD_RESERVA = B.CD_RESERVA)");
+					.prepareStatement("SELECT * FROM T_AM_DFA_RESERVA A INNER JOIN T_AM_DFA_RESERVA_QUARTO B ON (A.CD_RESERVA = B.CD_RESERVA)");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -75,17 +75,10 @@ public class ReservaDAO {
 				reserv.setQtdeHospedesCriancas(rs.getInt("QT_CRIANCA"));
 				reserv.setSituacaoReserva(rs.getString("ST_RESERVA"));
 				reserv.setDtSolicitação(rs.getString("DT_SOLICITACAO"));
-
-				ReservaQuarto quar = new ReservaQuarto();
-				quar.setNrQuarto(rs.getInt("NR_QUARTO"));
-
-				Cliente cl = new Cliente();
-				cl.setCodigoCliente(rs.getInt("CD_CLIENTE"));
-				cl.setNome(rs.getString("NM_PESSOA"));
-				
-				Funcionario fun = new Funcionario();
-				fun.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
-
+				reserv.setCliente(new Cliente());
+				reserv.getCliente().setCodigoCliente(rs.getInt("CD_CLIENTE"));
+				reserv.setReservaQuarto(new ReservaQuarto());
+				reserv.getReservaQuarto().setNrQuarto(rs.getInt("NR_QUARTO"));
 
 				reserva.add(reserv);
 
@@ -104,41 +97,36 @@ public class ReservaDAO {
 		}
 
 	}
-	
-	public Reserva Pesquisar(int Codigo) throws Exception {
+
+	public Reserva getPesquisar(String Codigo) throws Exception {
 		Reserva reserva = new Reserva();
 		PreparedStatement stmt = this.connection
-				.prepareStatement("SELECT * T_AM_DFA_HOSPEDAGEM WHERE CD_HOSPEDAGEM = ?");
-		stmt.setInt(1, Codigo);
-		ResultSet rs= stmt.executeQuery();
-        try{
-		if (rs.next()) {
-			reserva.setCodigoReserva(rs.getInt("CD_RESERVA"));
-			reserva.setDtEntrada(rs.getString("DT_INICIO_RESERVA"));
-			reserva.setDtSaida(rs.getString("DT_FINAL_RESERVA"));
-			reserva.setQtdeHospedesAdultos(rs.getInt("QT_ADULTO"));
-			reserva.setQtdeHospedesCriancas(rs.getInt("QT_CRIANCA"));
-			reserva.setSituacaoReserva(rs.getString("ST_RESERVA"));
-			reserva.setDtSolicitação(rs.getString("DT_SOLICITACAO"));
-			
-			ReservaQuarto rq = new ReservaQuarto();
-			rq.setNrQuarto(rs.getInt("NR_QUARTO"));
+				.prepareStatement("SELECT FROM T_AM_DFA_RESERVA WHERE CD_RESERVA = ?");
+		stmt.setString(1, Codigo);
+		ResultSet rs = stmt.executeQuery();
+		try {
+			if (rs.next()) {
+				reserva.setCodigoReserva(rs.getInt("CD_RESERVA"));
+				reserva.setDtEntrada(rs.getString("DT_INICIO_RESERVA"));
+				reserva.setDtSaida(rs.getString("DT_FINAL_RESERVA"));
+				reserva.setQtdeHospedesAdultos(rs.getInt("QT_ADULTO"));
+				reserva.setQtdeHospedesCriancas(rs.getInt("QT_CRIANCA"));
+				reserva.setSituacaoReserva(rs.getString("ST_RESERVA"));
+				reserva.setDtSolicitação(rs.getString("DT_SOLICITACAO"));
+				reserva.setCliente(new Cliente());
+				reserva.getCliente().setCodigoCliente(rs.getInt("CD_CLIENTE"));
+				reserva.setReservaQuarto(new ReservaQuarto());
+				reserva.getReservaQuarto().setNrQuarto(rs.getInt("NR_QUARTO"));
 
-			
-			Cliente cl = new Cliente();
-			cl.setCodigoCliente(rs.getInt("CD_CLIENTE"));
 
-			Funcionario fun = new Funcionario();
-			fun.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
 
+			}
+			rs.close();
+			stmt.close();
+			return reserva;
+		} catch (Exception e) {
+			throw new Exception("Codigo Incorreto");
+		}
 	}
-		rs.close();
-		stmt.close();
-		return reserva;
-	} catch (Exception e) {
-		throw new Exception("Codigo Incorreto");
-	}
- }
-
 
 }

@@ -71,12 +71,12 @@ public class ConsumoDAO {
 				con.setCodigoConsumo(rs.getInt("CD_CONSUMO"));
 				con.setQuantidade(rs.getInt("QT_CONSUMO"));
 				con.setDataConsumo(rs.getString("DT_CONSUMO"));
-
-				Hospedagem hosp = new Hospedagem();
-				hosp.setCodigoHospedagem(rs.getInt("CD_HOSPEDAGEM"));
-
-				Funcionario fun = new Funcionario();
-				fun.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
+				con.setHospedagem(new Hospedagem());
+				con.getHospedagem().setCodigoHospedagem(
+						rs.getInt("CD_HOSPEDAGEM"));
+				con.setFuncionario(new Funcionario());
+				con.getFuncionario().setCodigoFuncionario(
+						rs.getInt("CD_FUNCIONARIO"));
 
 				consumo.add(con);
 
@@ -107,7 +107,7 @@ public class ConsumoDAO {
 			stmt.setInt(1, consumo.getCodigoConsumo());
 			stmt.setString(2, consumo.getDataConsumo());
 			stmt.setInt(3, consumo.getQuantidade());
-			
+
 			Hospedagem hosp = new Hospedagem();
 			stmt.setInt(4, hosp.getCodigoHospedagem());
 
@@ -128,15 +128,17 @@ public class ConsumoDAO {
 	}
 
 	// DELETAR
-	public void excluir(Consumo consumo) throws Excecao {
+	public int Excluir(Consumo consumo) throws Excecao {
 		try {
 			PreparedStatement stmt = connection
 					.prepareStatement("DELETE FROM T_AM_DFA_CONSUMO"
 							+ "WHERE CD_CONSUMO=?");
 
 			stmt.setInt(1, consumo.getCodigoConsumo());
-			stmt.executeUpdate();
+			int saida = stmt.executeUpdate();
 			stmt.close();
+			return saida;
+
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
 		}

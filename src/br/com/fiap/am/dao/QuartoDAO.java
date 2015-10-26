@@ -34,10 +34,9 @@ public class QuartoDAO {
 				quar.setNrQuarto(rs.getInt("NR_QUARTO"));
 				quar.setAndar(rs.getInt("NR_ANDAR"));
 				quar.setCapacidade(rs.getInt("NR_CAPACIDADE"));
-				
-				TipoQuarto tp = new TipoQuarto();
-				tp.setCodigoTipoQuarto(rs.getInt("CD_TIPO_QUARTO"));
-
+				quar.setTipoQuarto(new TipoQuarto());
+				quar.getTipoQuarto().setCodigoTipoQuarto(rs.getInt("CD_TIPO_QUARTO"));
+		
 				quarto.add(quar);
 
 

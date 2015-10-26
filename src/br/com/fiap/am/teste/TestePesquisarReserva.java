@@ -1,6 +1,7 @@
 package br.com.fiap.am.teste;
 
-import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import br.com.fiap.am.beans.Reserva;
 import br.com.fiap.am.dao.ReservaDAO;
@@ -12,14 +13,12 @@ public class TestePesquisarReserva {
 
 		try {
 			ReservaDAO dao = new ReservaDAO();
-			List<Reserva> lista = dao.getLista();
-			for (Reserva obj : lista) {
-				System.out.println(obj.getDtEntrada() + "\n" + obj.getDtSaida()
-						+ "\n" + obj.getDtSolicitação() + "\n"
-						+ obj.getQtdeHospedesAdultos() + "\n" + obj.getQtdeHospedesCriancas()
-						+ "\n" + obj.getSituacaoReserva());
+			Reserva r = new Reserva();
+			String pesquisar = JOptionPane
+					.showInputDialog("Digite o codigo para pesquisa:");
+			r = dao.getPesquisar(pesquisar);
+			System.out.println(r.getCodigoReserva());
 
-			}
 		} catch (Exception e) {
 			throw new Excecao("Codigo de reserva invalido", e);
 		}

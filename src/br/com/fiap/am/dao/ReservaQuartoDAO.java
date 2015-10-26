@@ -12,14 +12,14 @@ import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
 public class ReservaQuartoDAO {
-	
+
 	// conexao
 	private Connection connection;
 
 	public ReservaQuartoDAO() throws Excecao {
 		this.connection = new Conexao().getConnection();
 	}
-	
+
 	public List<ReservaQuarto> getLista() throws Excecao {
 		try {
 			List<ReservaQuarto> reservaQuarto = new ArrayList<ReservaQuarto>();
@@ -32,13 +32,10 @@ public class ReservaQuartoDAO {
 				rq.setNrQuarto(rs.getInt("NR_QUARTO"));
 				rq.setQtdePessoaQuarto(rs.getInt("QT_PESSOA_QUARTO"));
 				rq.setDsObservacao(rs.getString("DS_OBSERVACAO"));
-				
-				Reserva reserv = new Reserva();
-				reserv.setCodigoReserva(rs.getInt("CD_RESERVA"));
+				rq.setCodigoReserva(new Reserva());
+				rq.getCodigoReserva().setCodigoReserva(rs.getInt("CD_RESERVA"));
 
-
-                reservaQuarto.add(rq);
-                
+				reservaQuarto.add(rq);
 
 			}
 			rs.close();
@@ -56,6 +53,4 @@ public class ReservaQuartoDAO {
 
 	}
 
-
-    
 }

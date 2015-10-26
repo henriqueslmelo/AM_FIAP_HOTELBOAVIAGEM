@@ -1,6 +1,7 @@
 package br.com.fiap.am.teste;
 
-import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import br.com.fiap.am.beans.Hospedagem;
 import br.com.fiap.am.dao.HospedagemDAO;
@@ -12,16 +13,15 @@ public class TestePesquisarHospedagem {
 
 		try {
 			HospedagemDAO dao = new HospedagemDAO();
-			List<Hospedagem> lista = dao.getLista();
-			for (Hospedagem obj : lista) {
-				System.out.println(obj.getDataEntrada() + "\n" + obj.getDataSaida()
-						+ "\n" + obj.getDesconto()+ "\n");
+			Hospedagem h = new Hospedagem();
+			String pesquisar = JOptionPane
+					.showInputDialog("Digite o codigo para pesquisa:");
+			h = dao.getPesquisar(pesquisar);
+			System.out.println(h.getCodigoReserva());
 
-			}
 		} catch (Exception e) {
-			throw new Excecao("Codigo da hospedagem invalido", e);
+			throw new Excecao("Codigo de reserva invalido", e);
 		}
-
 	}
 
 }

@@ -31,10 +31,9 @@ public class HospedagemDAO {
 			stmt.setString(1, hospedagem.getDataEntrada());
 			stmt.setString(2, hospedagem.getDataSaida());
 			stmt.setDouble(3, hospedagem.getDesconto());
-			
+
 			Reserva res = new Reserva();
 			stmt.setInt(4, res.getCodigoReserva());
-
 
 			ReservaQuarto quar = new ReservaQuarto();
 			stmt.setInt(5, quar.getNrQuarto());
@@ -71,19 +70,17 @@ public class HospedagemDAO {
 				Hospedagem hosp = new Hospedagem();
 				hosp.setCodigoHospedagem(rs.getInt("CD_HOSPEDAGEM"));
 				hosp.setDesconto(rs.getDouble("VC_PERC_DESCONTO"));
-
-				Reserva res = new Reserva();
-				res.setCodigoReserva(rs.getInt("CD_RESERVA"));
-				
-				ReservaQuarto rq = new ReservaQuarto();
-				rq.setNrQuarto(rs.getInt("NR_QUARTO"));
-
-				
-				Cliente cl = new Cliente();
-				cl.setCodigoCliente(rs.getInt("CD_CLIENTE"));
-
-				Funcionario fun = new Funcionario();
-				fun.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
+				hosp.setCodigoCliente(new Cliente());
+				hosp.getCodigoCliente().setCodigoCliente(
+						rs.getInt("CD_CLIENTE"));
+				hosp.setNrQuarto(new ReservaQuarto());
+				hosp.getNrQuarto().setNrQuarto(rs.getInt("NR_QUARTO"));
+				hosp.setCodigoReserva(new Reserva());
+				hosp.getCodigoReserva().setCodigoReserva(
+						rs.getInt("CD_RESERVA"));
+				hosp.setCodigoFuncionario(new Funcionario());
+				hosp.getCodigoFuncionario().setCodigoFuncionario(
+						rs.getInt("CD_FUNCIONARIO"));
 
 				hospedagem.add(hosp);
 
@@ -100,43 +97,40 @@ public class HospedagemDAO {
 				throw new Excecao("Ocorreu um erro", e);
 			}
 		}
-		
+
 	}
-		
-		//PESQUISAR
-		
-		public Hospedagem Pesquisar(int Codigo) throws Exception {
-			Hospedagem hospedagem = new Hospedagem();
-			PreparedStatement stmt = this.connection
-					.prepareStatement("SELECT * T_AM_DFA_HOSPEDAGEM WHERE CD_HOSPEDAGEM = ?");
-			stmt.setInt(1, Codigo);
-			ResultSet rs= stmt.executeQuery();
-	        try{
+
+	// PESQUISAR
+
+	public Hospedagem getPesquisar(String Codigo) throws Exception {
+		Hospedagem hospedagem = new Hospedagem();
+		PreparedStatement stmt = this.connection
+				.prepareStatement("SELECT FROM T_AM_DFA_HOSPEDAGEM WHERE CD_HOSPEDAGEM = ?");
+		stmt.setString(1, Codigo);
+		ResultSet rs = stmt.executeQuery();
+		try {
 			if (rs.next()) {
 				hospedagem.setCodigoHospedagem(rs.getInt("CD_HOSPEDAGEM"));
 				hospedagem.setDesconto(rs.getDouble("VC_PERC_DESCONTO"));
+				hospedagem.setCodigoCliente(new Cliente());
+				hospedagem.getCodigoCliente().setCodigoCliente(
+						rs.getInt("CD_CLIENTE"));
+				hospedagem.setNrQuarto(new ReservaQuarto());
+				hospedagem.getNrQuarto().setNrQuarto(rs.getInt("NR_QUARTO"));
+				hospedagem.setCodigoReserva(new Reserva());
+				hospedagem.getCodigoReserva().setCodigoReserva(
+						rs.getInt("CD_RESERVA"));
+				hospedagem.setCodigoFuncionario(new Funcionario());
+				hospedagem.getCodigoFuncionario().setCodigoFuncionario(
+						rs.getInt("CD_FUNCIONARIO"));
 
-				Reserva res = new Reserva();
-				res.setCodigoReserva(rs.getInt("CD_RESERVA"));
-				
-				ReservaQuarto rq = new ReservaQuarto();
-				rq.setNrQuarto(rs.getInt("NR_QUARTO"));
-
-				
-				Cliente cl = new Cliente();
-				cl.setCodigoCliente(rs.getInt("CD_CLIENTE"));
-
-				Funcionario fun = new Funcionario();
-				fun.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
-
-		}
+			}
 			rs.close();
 			stmt.close();
 			return hospedagem;
 		} catch (Exception e) {
 			throw new Exception("Codigo Incorreto");
 		}
-	 }
-
 	}
 
+}
