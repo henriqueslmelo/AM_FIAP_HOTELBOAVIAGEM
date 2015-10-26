@@ -1,5 +1,18 @@
 package br.com.fiap.am.exception;
 
+
+/**
+ * Classe para criação das excecoes
+ * 
+ * Retorta uma String com a excecao a ser exibida
+
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
+
 public class Excecao extends Exception {
 	public Excecao(String m, Exception e) {
 		super(m, e);
@@ -22,5 +35,8 @@ public class Excecao extends Exception {
 		} else {
 			e.printStackTrace();
 		}
+		
+		
 	}
+	
 }
