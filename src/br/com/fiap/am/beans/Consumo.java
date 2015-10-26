@@ -1,5 +1,20 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Funcionários, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * @see Classe Hospedagem com metodo relacionado a esta classe
+ * @see Classe Funcionario com metodo relacionado a esta classe
+ * @see Classe Servico com metodo relacionado a esta classe
+ * @see Classe Produto com metodo relacionado a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
+
 public class Consumo {
 	private int codigoConsumo;
 	private int quantidade;

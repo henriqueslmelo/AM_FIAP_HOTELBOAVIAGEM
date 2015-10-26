@@ -1,5 +1,17 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Funcionários, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * @see Classe Pessoa Relacionada a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
+
 public class Funcionario extends Pessoa {
 	private int codigoFuncionario;
 	private String dtAdmissao;

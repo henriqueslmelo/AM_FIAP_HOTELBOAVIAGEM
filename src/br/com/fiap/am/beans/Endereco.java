@@ -1,5 +1,16 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Endereco, onde serão contidos, valores e métodos para o mesmo
+ * 
+ *
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
 public class Endereco {
 	
 	private String tipoLogradouro;

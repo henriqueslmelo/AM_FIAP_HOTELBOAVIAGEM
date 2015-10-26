@@ -1,5 +1,15 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Servico, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
 public class Servico {
 	private int codigoServico;
 	private String descricaoServico;

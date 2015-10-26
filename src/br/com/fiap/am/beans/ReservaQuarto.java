@@ -1,5 +1,17 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo ReservaQuarto, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * @see Classe Reserva com metodo relacionado a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
+
 public class ReservaQuarto {
 	
 	private Reserva codigoReserva;

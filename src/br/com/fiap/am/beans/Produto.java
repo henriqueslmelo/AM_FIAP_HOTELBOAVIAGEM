@@ -1,5 +1,15 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Produto, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
 public class Produto {
 	private int codigoProduto;
 	private String descricaoProduto;

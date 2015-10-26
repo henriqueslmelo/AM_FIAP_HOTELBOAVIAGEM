@@ -1,5 +1,16 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Quarto, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * @see Classe TipoQuarto Relacionada a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
 public class Quarto {
 	private int nrQuarto;
 	private TipoQuarto tipoQuarto;

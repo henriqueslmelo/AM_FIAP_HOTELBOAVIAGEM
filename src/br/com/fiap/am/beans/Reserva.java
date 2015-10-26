@@ -1,5 +1,18 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Reserva, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * @see Classe ReservaQuarto com metodo relacionado a esta classe
+ * @see Classe Cliente com metodo relacionado a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
+
 public class Reserva {
 	private int codigoReserva;
 	private String dtEntrada;

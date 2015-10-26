@@ -1,5 +1,15 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Cliente, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * @see Classe Pessoa Relacionada a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
 public class Cliente extends Pessoa {
 	private int codigoCliente;
 	private String cpf;
@@ -32,7 +42,7 @@ public class Cliente extends Pessoa {
 
 	}
 
-	public Cliente(String cpf, String rg, int senha) {
+	public Cliente(String cpf, String rg, int senha, String dsSenha) {
 		super();
 		this.cpf = cpf;
 		this.rg = rg;

@@ -1,5 +1,20 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Pessoa, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * Classe usada como heranca para as classes Cliente e Funcionario
+ * 
+ * @see classe Telefone com método relacionado a esta classe
+ * @see classe Endereco com método relacionado a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
+
 public class Pessoa {
 	private int codigoPessoa;
 	private String nome;

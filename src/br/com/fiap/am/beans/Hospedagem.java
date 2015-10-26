@@ -1,5 +1,19 @@
 package br.com.fiap.am.beans;
 
+/**
+ * Classe para objetos do tipo Hospedagem, onde serão contidos, valores e métodos para o mesmo
+ * 
+ * @see Classe Reserva com metodo relacionado a esta classe
+ * @see Classe Funcionario com metodo relacionado a esta classe
+ * @see Classe Cliente com metodo relacionado a esta classe
+ * 
+ * @author Bruno Abdante
+ * @author Henrique Melo
+ * @author Monica Silva
+ *
+ */
+
+
 public class Hospedagem {
 	private int codigoHospedagem;
 	private double desconto;
