@@ -13,7 +13,6 @@ import br.com.fiap.am.beans.Reserva;
 import br.com.fiap.am.beans.ReservaQuarto;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
-import br.com.fiap.tageando.beans.BeneficiarioBeans;
 
 public class HospedagemDAO {
 
@@ -29,10 +28,13 @@ public class HospedagemDAO {
 				+ "(NR_QUARTO, CD_RESERVA, CD_CLIENTE, CD_FUNCIONARIO, DT_ENTRADA, DT_SAIDA, VC_PERC_DESCONTO) values (?,?,?,?,?,?,?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
-			stmt.setInt(1, hospedagem.getNrQuarto());
-			stmt.setString(2, hospedagem.getDataEntrada());
-			stmt.setString(3, hospedagem.getDataSaida());
-			stmt.setDouble(4, hospedagem.getDesconto());
+			stmt.setString(1, hospedagem.getDataEntrada());
+			stmt.setString(2, hospedagem.getDataSaida());
+			stmt.setDouble(3, hospedagem.getDesconto());
+			
+			Reserva res = new Reserva();
+			stmt.setInt(4, res.getCodigoReserva());
+
 
 			ReservaQuarto quar = new ReservaQuarto();
 			stmt.setInt(5, quar.getNrQuarto());
@@ -62,7 +64,7 @@ public class HospedagemDAO {
 		try {
 			List<Hospedagem> hospedagem = new ArrayList<Hospedagem>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT * FROM T_AM_DFA_HOSPEDAGEM)");
+					.prepareStatement("SELECT FROM T_AM_DFA_HOSPEDAGEM A INNER JOIN T_AM_RESERVA B ON (A.CD_RESERVA = B.CD_RESRVA)");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

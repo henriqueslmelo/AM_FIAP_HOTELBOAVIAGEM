@@ -63,7 +63,7 @@ public class ReservaDAO {
 		try {
 			List<Reserva> reserva = new ArrayList<Reserva>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT * FROM T_AM_DFA_RESERVA A INNER JOIN T_AM_DFA_RESERVA_QUARTO B ON (A.CD_RESERVA = B.CD_RESERVA)");
+					.prepareStatement("SELECT FROM T_AM_DFA_RESERVA A INNER JOIN T_AM_DFA_RESERVA_QUARTO B ON (A.CD_RESERVA = B.CD_RESERVA)");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

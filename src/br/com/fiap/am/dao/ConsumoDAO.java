@@ -9,6 +9,8 @@ import java.util.List;
 import br.com.fiap.am.beans.Consumo;
 import br.com.fiap.am.beans.Funcionario;
 import br.com.fiap.am.beans.Hospedagem;
+import br.com.fiap.am.beans.Produto;
+import br.com.fiap.am.beans.Servico;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
 
@@ -27,15 +29,21 @@ public class ConsumoDAO {
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			stmt.setInt(1, consumo.getCodigoConsumo());
-			stmt.setInt(2, consumo.getHospedagem());
-			stmt.setInt(3, consumo.getProduto());
-			stmt.setInt(4, consumo.getServico());
-			stmt.setnt(5, consumo.getFuncionario());
-			stmt.setString(6, consumo.getDataConsumo());
-			stmt.setInt(6, consumo.getQuantidade());
+			stmt.setString(2, consumo.getDataConsumo());
+			stmt.setInt(3, consumo.getQuantidade());
 
+			Hospedagem hosp = new Hospedagem();
+			stmt.setInt(4, hosp.getCodigoHospedagem());
 
-			
+			Funcionario fun = new Funcionario();
+			stmt.setInt(5, fun.getCodigoFuncionario());
+
+			Produto pro = new Produto();
+			stmt.setInt(6, pro.getCodigoProduto());
+
+			Servico serv = new Servico();
+			stmt.setInt(7, serv.getCodigoServico());
+
 			stmt.execute();
 			stmt.close();
 		} catch (Exception e) {
@@ -55,7 +63,7 @@ public class ConsumoDAO {
 		try {
 			List<Consumo> consumo = new ArrayList<Consumo>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT * FROM T_AM_DFA_CONSUMO");
+					.prepareStatement("SELECT * FROM T_AM_DFA_CONSUMO A INNER JOIN T_AM_DFA_HOSPEDAGEM B (A.CD_HOSPEDAGEM = B.CD_HOSPEDAGEM )");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -63,7 +71,7 @@ public class ConsumoDAO {
 				con.setCodigoConsumo(rs.getInt("CD_CONSUMO"));
 				con.setQuantidade(rs.getInt("QT_CONSUMO"));
 				con.setDataConsumo(rs.getString("DT_CONSUMO"));
-				
+
 				Hospedagem hosp = new Hospedagem();
 				hosp.setCodigoHospedagem(rs.getInt("CD_HOSPEDAGEM"));
 
@@ -93,16 +101,25 @@ public class ConsumoDAO {
 	public void alterar(Consumo consumo) throws Excecao {
 		String sql = "UPDATE T_AM_DFA_CONSUMO SET CD_HOSPEDAGEM=?, CD_TIPO_SERVICO=?,"
 				+ "CD_FUNCIONARIO=?, DT_CONSUMO=?, QT_CONSUMO=? WHERE CD_CONSUMO=?";
-		
+
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setInt(1, consumo.getCodigoConsumo());
-			stmt.setInt(2, consumo.getHospedagem());
-			stmt.setInt(3, consumo.getProduto());
-			stmt.setInt(4, consumo.getServico());
-			stmt.setnt(5, consumo.getFuncionario());
-			stmt.setString(6, consumo.getDataConsumo());
-			stmt.setInt(6, consumo.getQuantidade());
+			stmt.setString(2, consumo.getDataConsumo());
+			stmt.setInt(3, consumo.getQuantidade());
+			
+			Hospedagem hosp = new Hospedagem();
+			stmt.setInt(4, hosp.getCodigoHospedagem());
+
+			Funcionario fun = new Funcionario();
+			stmt.setInt(5, fun.getCodigoFuncionario());
+
+			Produto pro = new Produto();
+			stmt.setInt(6, pro.getCodigoProduto());
+
+			Servico serv = new Servico();
+			stmt.setInt(7, serv.getCodigoServico());
+
 			stmt.executeUpdate();
 			stmt.close();
 		} catch (Exception e) {

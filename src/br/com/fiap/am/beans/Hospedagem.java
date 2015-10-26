@@ -8,7 +8,7 @@ public class Hospedagem {
 	private Cliente codigoCliente;
 	private String dataEntrada;
 	private String dataSaida;
-	private int nrQuarto;
+	private ReservaQuarto nrQuarto;
 
 	
 
@@ -19,7 +19,7 @@ public class Hospedagem {
 	public Hospedagem(int codigoHospedagem, double desconto,
 			Reserva codigoReserva, Funcionario codigoFuncionario,
 			Cliente codigoCliente, String dataEntrada,
-	String dataSaida, int nrQuarto) {
+	String dataSaida, ReservaQuarto nrQuarto) {
 		super();
 		this.codigoHospedagem = codigoHospedagem;
 		this.desconto = desconto;
@@ -35,7 +35,7 @@ public class Hospedagem {
 	public Hospedagem(double desconto,
 			Reserva codigoReserva, Funcionario codigoFuncionario,
 			Cliente codigoCliente, String dataEntrada,
-	 String dataSaida, int nrQuarto) {
+	 String dataSaida, ReservaQuarto nrQuarto) {
 		super();
 		this.desconto = desconto;
 		this.codigoReserva = codigoReserva;
@@ -105,11 +105,11 @@ public class Hospedagem {
 		this.dataSaida = dataSaida;
 	}
 
-	public int getNrQuarto() {
+	public ReservaQuarto getNrQuarto() {
 		return nrQuarto;
 	}
 
-	public void setNrQuarto(int nrQuarto) {
+	public void setNrQuarto(ReservaQuarto nrQuarto) {
 		this.nrQuarto = nrQuarto;
 	}
 
