@@ -133,6 +133,11 @@ h5 i.bg{
 	right: -34px;
 	top: 0px;
 }
+
+.slide {
+	background-image: url('images/slider-bg.jpg');
+}
+}
 #fwslider .description { /* Slider Description Style */
     opacity: 0;
     color:#ffffff;
