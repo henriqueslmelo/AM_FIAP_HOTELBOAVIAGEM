@@ -67,5 +67,38 @@ public class ClienteDAO {
 		}
 
 	}
+	
+	//BUSCA USUÁRIO
+	public List<Cliente> getLogin() throws Excecao {
+		try {
+			List<Cliente> cliente = new ArrayList<Cliente>();
+			PreparedStatement stmt = connection
+					.prepareStatement("SELECT DS_EMAIL, DS_SENHA FROM T_AM_DFA_CLIENTE WHERE DS_EMAIL = ? AND DS_SENHA = ?");
+			ResultSet rs = stmt.executeQuery();
+			System.out.println("DAO");
+			while (rs.next()) {
+				System.out.println("teste");
+				Cliente cl = new Cliente();
+				cl.setEmail(rs.getString("DS_EMAIL"));
+				cl.setDsSenha(rs.getString("DS_SENHA"));
+				cliente.add(cl);
+
+			}
+			rs.close();
+			stmt.close();
+			System.out.println("DAO2");
+			return cliente;
+		} catch (Exception e) {
+			throw new Excecao("Ocorreu um erro", e);
+		} finally {
+			try {
+				connection.close();
+			} catch (Exception e) {
+				throw new Excecao("Ocorreu um erro", e);
+			}
+		}
+
+	}
+
 
 }
