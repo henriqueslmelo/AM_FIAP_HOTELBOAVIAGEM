@@ -70,23 +70,27 @@ public class TipoQuartoDAO {
 	
 	public TipoQuarto Pesquisar(String srtipoQuarto) throws Excecao {
 		TipoQuarto tipoQuarto = new TipoQuarto();
+		System.out.println("DAO");
 		try {
 
 			PreparedStatement stmt = connection
 					.prepareStatement("SELECT * FROM T_AM_DFA_TIPO_QUARTO WHERE DS_TIPO_QUARTO=?");
 			stmt.setString(1, srtipoQuarto);
 			ResultSet rs = stmt.executeQuery();
-			
+			System.out.println("DAO QUERY");
 			if (rs.next()) {
 				tipoQuarto.setVlQuarto(rs.getDouble("VL_TIPO_QUARTO"));
 				rs.close();
 				stmt.close();
 				connection.close();
+				System.out.println("DAOTREU");
 				return tipoQuarto;
+				
 			} else {
 				rs.close();
 				stmt.close();
 				connection.close();
+				System.out.println("FALSE");
 				return tipoQuarto;
 			}
 		} catch (Exception e) {

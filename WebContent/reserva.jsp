@@ -127,11 +127,11 @@
 							<h4>Tipo do Quarto</h4>
 							<select name="tipoQuarto" id="country"
 								onchange="change_country(this.value)" class="frm-field required">
-								<option value="null">Selecione o tipo do quarto</option>
-								<option value="AX">Master Luxo</option>
-								<option value="AX">Luxo</option>
-								<option value="AX">Master</option>
-								<option value="AX">Standard</option>
+								<option>Selecione o tipo do quarto</option>
+								<option>Master Luxo</option>
+								<option>Luxo</option>
+								<option>Master</option>
+								<option>Standard</option>
 							</select>
 						</div>
 
@@ -189,7 +189,7 @@
 						</div>
 						<div class="res_btn"></br></br></br></br></br></br>
 							<input type="submit" value="Calcular" style="width: 150px; height:30px;"></a></br></br>
-							<h4 name="valorTotal" id="valorTotal" value="${tipoQuarto.vlTotalQuarto}">Valor Estimado</h4>
+							<h4 name="valorTotal" id="valorTotal" value="">${tipoQuarto.vlTotalQuarto}</h4>
 						</div>
 						</form>
 					</div>

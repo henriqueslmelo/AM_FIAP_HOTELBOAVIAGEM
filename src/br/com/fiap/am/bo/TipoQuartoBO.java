@@ -12,8 +12,10 @@ public class TipoQuartoBO {
 private TipoQuartoDAO tp;
 	
 	public TipoQuarto listaVl() throws Excecao{
-		tp = new TipoQuartoDAO();		
+		tp = new TipoQuartoDAO();	
+		System.out.println("BO");
 		return tp.Pesquisar("FABIOBAITOL"); 
+		
 	}
 
 }
