@@ -57,6 +57,7 @@
 				<li><a href="quartos.jsp">Quartos</a></li> |
 				<li><a href="reserva.jsp">Reserva</a></li> |
 				<li class="active"><a href="atividades.jsp">Atividades</a></li> |
+				<li><a href="sobre.jsp">Sobre nós</a></li> |
 				<li><a href="contato.jsp">Contato</a></li>
 				<div class="clear"></div>
 			</ul>
@@ -70,6 +71,7 @@
 				<li><a href="quartos.jsp">Quartos</a></li> 
 				<li><a href="reservas.jsp">Reservas</a></li> 
 				<li><a href="atividades.jsp">Atividades</a></li> 
+				<li><a href="sobre.jsp">Sobre nós</a></li> 
 				<li><a href="contato.jsp">Contato</a></li>
 				</ul>
 				<a href="#" id="pull">Menu</a>
@@ -193,10 +195,12 @@
 			</div>
 			<div class="f_nav">
 				<ul>
-					<li><a href="index.jsp">Home</a></li>
-					<li><a href="quartos.jsp">Quartos</a></li>
-					<li><a href="reserva.jsp">Reserva</a></li>
-					<li><a href="contato.jsp">Contato</a></li>
+						<li><a href="index.jsp">Home</a></li>
+						<li><a href="quartos.jsp">Quartos</a></li>
+						<li><a href="reserva.jsp">Reserva</a></li>
+						<li><a href="atividades.jsp">Atividades</a></li>
+						<li><a href="sobre.jsp">Sobre nós</a></li>
+						<li><a href="contato.jsp">Contato</a></li>
 				</ul>
 			</div>
 			<div class="soc_icons">

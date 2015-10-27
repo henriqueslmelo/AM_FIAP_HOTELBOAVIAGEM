@@ -57,10 +57,11 @@
 				<div class="h_right">
 					<!--start menu -->
 					<ul class="menu">
-						<li class="active"><a href="index.jsp">Home</a></li> |
+						<li><a href="index.jsp">Home</a></li> |
 						<li><a href="quartos.jsp">Quartos</a></li> |
-						<li><a href="reserva.jsp">Rserva</a></li> |
-						<li><a href="atividades.jsp">Atividsades</a></li> |
+						<li><a href="reserva.jsp">Reserva</a></li> |
+						<li><a href="atividades.jsp">Atividades</a></li>|
+						<li class="active"><a href="sobre.jsp">Sobre nós</a></li> |
 						<li><a href="contato.jsp">Contato</a></li>
 						<div class="clear"></div>
 					</ul>
@@ -70,11 +71,12 @@
 				<div class="top-nav">
 					<nav class="clearfix">
 						<ul>
-							<li class="active"><a href="index.jsp">Home</a></li>
-							<li><a href="quartos.jsp">Quartos</a></li>
-							<li><a href="reserva.jspl">Reserva</a></li>
-							<li><a href="atividades.jsp">Atividades</a></li>
-							<li><a href="contato.jsp">Contato</a></li>
+						<li><a href="index.jsp">Home</a></li> |
+						<li><a href="quartos.jsp">Quartos</a></li> |
+						<li><a href="reserva.jsp">Reserva</a></li> |
+						<li><a href="atividades.jsp">Atividades</a></li>|
+						<li class="active"><a href="sobre.jsp">Sobre nós</a></li> |
+						<li><a href="contato.jsp">Contato</a></li>
 						</ul>
 						<a href="#" id="pull">Menu</a>
 					</nav>
@@ -87,36 +89,25 @@
 		<div class="wrap">
 			<div class="main">
 				<div class="details">
-					<h2>Lorem ipsum dolor sit amet consectetur adipisicing</h2>
+					<h2>Sobre nós</h2>
 					<div class="det_pic">
 						<img src="images/det_pic.jpg" alt="" />
 					</div>
 					<div class="det_text">
-						<p class="para">There are many variations of passages of Lorem
-							Ipsum available, but the majority have suffered alteration in
-							some form, by injected humour, or randomised words which don't
-							look even slightly believable. If you are going to use a passage
-							of Lorem Ipsum, you need to be sure there isn't anything
-							embarrassing hidden in the middle of text. All the Lorem Ipsum
-							generators on the Internet tend to repeat predefined chunks as
-							necessary, making this the first true generator on the Internet.
-							It uses a dictionary of over 200 Latin words, combined with a
-							handful of model sentence structures, to generate Lorem Ipsum
-							which looks reasonable.</p>
-						<p class="para">Contrary to popular belief, Lorem Ipsum is not
-							simply random text. It has roots in a piece of classical Latin
-							literature from 45 BC, making it over 2000 years old. Richard
-							McClintock, a Latin professor at Hampden-Sydney College in
-							Virginia, looked up one of the more obscure Latin words,
-							consectetur, from a Lorem Ipsum passage, and going through the
-							cites of the word in classical literature, discovered the
-							undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-							1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good
-							and Evil) by Cicero, written in 45 BC. This book is a treatise on
-							the theory of ethics</p>
-						<div class="read_more">
-							<a href="details.html">read more</a>
-						</div>
+						<p class="para">O Hotel Boa Viagem é um empreendimento que tem, por tradição, oferecer a seus hóspedes, atendimento personalizado, 
+						serviços especiais e garantia de satisfação.
+						A estrutura moderna e funcional do hotel conta com um amplo restaurante de cozinha internacional, auditório para reuniões e eventos, 
+						sauna, piscina, área de ginástica e internet banda larga em todos os apartamentos com suporte técnico.
+						Há, também, um elevador especial para cadeira de rodas, equipamentos e acomodações preparadas para o atendimento aos deficientes físicos.
+						O Hotel Boa Viagem, é hoje, referencial para o turismo de negócios e lazer na capital, tendo como filosofia proporcionar uma estadia 
+						agradável a todos, preservando, em alto nível, a tradicional hospitalidade mineira.
+						Estamos esperando por você. Faça agora sua reserva.
+</p>
+					<div class="date_btn">
+						<form action="reserva.jsp">
+							<input type="submit" value="Reservar" style="width: 82px;">
+						</form>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -134,6 +125,8 @@
 						<li><a href="index.jsp">Home</a></li>
 						<li><a href="quartos.jsp">Quartos</a></li>
 						<li><a href="reserva.jsp">Reserva</a></li>
+						<li><a href="atividades.jsp">Atividades</a></li>
+						<li><a href="sobre.jsp">Sobre nós</a></li>
 						<li><a href="contato.jsp">Contato</a></li>
 					</ul>
 				</div>
