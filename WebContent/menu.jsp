@@ -127,7 +127,7 @@
 		<div class="wrap">
 			<div class="footer">
 				<div class="copy">
-					<p class="link"><span>© Todos os direitos reservados | Template by&nbsp;DFAB</a></span></p>
+					<p class="link"><span>© Todos os direitos reservados | Template by DFAB</a></span></p>
 				</div>
 				<div class="f_nav">
 					<ul>

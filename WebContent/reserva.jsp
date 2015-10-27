@@ -189,8 +189,7 @@
 			<div class="footer">
 				<div class="copy">
 					<p class="link">
-						<span>© Todos os direitos reservados | Template by&nbsp;
-							DFAB</a>
+						<span>© Todos os direitos reservados | Template DFAB</a>
 						</span>
 					</p>
 				</div>
