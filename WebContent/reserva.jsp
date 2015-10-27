@@ -97,17 +97,11 @@
 		<div class="wrap">
 			<div class="main">
 				<div class="res_online">
-					<h4>basic information</h4>
-					<p class="para">Lorem Ipsum is simply dummy text of the
-						printing and typesetting industry. Lorem Ipsum has been the
-						industry's standard dummy text ever since the 1500s, when an
-						unknown printer took a galley of type and scrambled it to make a
-						type specimen book. It has survived not only five centuries, but
-						also the leap into electronic typesetting, remaining essentially
-						unchanged. It was popularised in the 1960s with the release of
-						Letraset sheets containing Lorem Ipsum passages, and more recently
-						with desktop publishing software like Aldus PageMaker including
-						versions of Lorem Ipsum.</p>
+					<h4>Faça sua reserva</h4>
+					<p class="para">Informe a data de entrada e a data de saída do hotel, 
+					a quantidade de hospedes, o limite é de 4 pessoas por quarto, 
+					escolha o tipo e a quantidade de quartos.
+					</p>
 				</div>
 				<div class="span_of_2">
 					<div class="span2_of_1">
@@ -119,8 +113,9 @@
 									onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
 							</form>
 						</div>
+						
 						<div class="sel_room">
-							<h4>Número de Quartoss</h4>
+							<h4>Tipo do Quarto</h4>
 							<select id="country" onchange="change_country(this.value)"
 								class="frm-field required">
 								<option value="null">Selecione o tipo do quarto</option>
@@ -130,6 +125,18 @@
 								<option value="AX">Standard</option>
 							</select>
 						</div>
+						
+						<div class="sel_room left">
+							<h4>Quantidade Quartos</h4>
+							<select id="country" onchange="change_country(this.value)"
+								class="frm-field required">
+								<option value="null">1</option>
+								<option value="AX">2</option>
+								<option value="AX">3</option>
+								<option value="AX">4</option>
+							</select>
+						</div>
+						
 						<div class="sel_room left">
 							<h4>Adultos por Quarto</h4>
 							<select id="country" onchange="change_country(this.value)"

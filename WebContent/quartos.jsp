@@ -164,15 +164,13 @@
 							<input type="submit" value="Reservar" style="width: 82px;">
 						</form>
 					</div>
-					<h4>room features</h4>
+					<h4>Principais Caracteristicas dos quartos</h4>
 					<ul class="s_nav">
-						<li><a href="#">laptop-size safe</a></li>
-						<li><a href="#">Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit.</a></li>
-						<li><a href="#">Etiam malesuada leo ornare</a></li>
-						<li><a href="#">Sed eu magna sed lorem tincidunt</a></li>
-						<li><a href="#">Proin id diam eleifend neque auctor
-								scelerisque.</a></li>
+						<li>Conforto</a></li>
+						<li>Quartos insonorizados</li>
+						<li>Wi-Fi incluso no valor da reserva</li>
+						<li>Limpeza diária</li>
+						<li>TV e telefone em todos os tipos de quarto</li>
 					</ul>
 					<h4>Formas de Pagamento</h4>
 					<ul class="s_nav1">

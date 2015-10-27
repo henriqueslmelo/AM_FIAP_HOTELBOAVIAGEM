@@ -618,7 +618,7 @@ p.para {
 }
 
 .s_nav li a:hover {
-	color: #228AC6;
+	color: #6b6b6b;
 }
 
 .s_nav1 li {
@@ -715,11 +715,11 @@ p.para {
 
 .sel_room {
 	float: left;
-	width: 47.77777%;
+	width: 20%;
 }
 
 .sel_room.left {
-	margin-left: 4.33333%;
+	margin-left: 10%;
 }
 
 .book_date.btm {
