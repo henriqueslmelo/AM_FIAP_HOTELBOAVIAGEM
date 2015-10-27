@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.fiap.am.beans.Cliente;
 import br.com.fiap.am.beans.TipoQuarto;
 import br.com.fiap.am.conexao.Conexao;
 import br.com.fiap.am.exception.Excecao;
@@ -66,5 +67,37 @@ public class TipoQuartoDAO {
 
 	}
 
+	
+	public TipoQuarto Pesquisar(String srtipoQuarto) throws Excecao {
+		TipoQuarto tipoQuarto = new TipoQuarto();
+		try {
 
+			PreparedStatement stmt = connection
+					.prepareStatement("SELECT * FROM T_AM_DFA_TIPO_QUARTO WHERE DS_TIPO_QUARTO=?");
+			stmt.setString(1, srtipoQuarto);
+			ResultSet rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				tipoQuarto.setVlQuarto(rs.getDouble("VL_TIPO_QUARTO"));
+				rs.close();
+				stmt.close();
+				connection.close();
+				return tipoQuarto;
+			} else {
+				rs.close();
+				stmt.close();
+				connection.close();
+				return tipoQuarto;
+			}
+		} catch (Exception e) {
+			throw new Excecao("Ocorreu um erro", e);
+		} finally {
+			try {
+				connection.close();
+			} catch (Exception e) {
+				throw new Excecao("Ocorreu um erro", e);
+			}
+		}
+
+	}
 }

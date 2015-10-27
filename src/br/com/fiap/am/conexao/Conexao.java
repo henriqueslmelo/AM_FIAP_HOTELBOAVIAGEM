@@ -30,7 +30,7 @@ public class Conexao {
 		try {
 			//return DriverManager.getConnection("jdbc:oracle:thin:/:@192.168.60.15:1521:ORCL", "OPS$RM75202", "041288");
 			//USADO NA FIAP
-			return DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "OPS$RM71962", "140486");
+			return DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "OPS$RM75202", "041288");
 			
 		    /** Método para retorno do driver de conexao
 		     * 

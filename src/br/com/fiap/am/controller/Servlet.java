@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import br.com.fiap.am.beans.Cliente;
 import br.com.fiap.am.bo.LoginBO;
+import br.com.fiap.am.bo.TipoQuartoBO;
 import br.com.fiap.am.exception.Excecao;
 
 /**
@@ -34,7 +35,6 @@ public class Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("doGet");
 	}
 
 	/**
@@ -45,6 +45,9 @@ public class Servlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		Cliente cliente = new Cliente();
+		
+		
+		TipoQuartoBO tipoQuarto = new TipoQuartoBO();
 		
 		cliente.setEmail(request.getParameter("user"));
 		cliente.setDsSenha(request.getParameter("password"));
@@ -68,4 +71,5 @@ public class Servlet extends HttpServlet {
 		}
 	}
 
+		
 }

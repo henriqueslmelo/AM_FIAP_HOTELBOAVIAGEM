@@ -19,37 +19,38 @@ public class Reserva {
 	private String dtSaida;
 	private int qtdeHospedesAdultos;
 	private int qtdeHospedesCriancas;
-	private ReservaQuarto nrQuarto;
+	private ReservaQuarto reservaQuarto;
 	private Cliente cliente;
 	private String situacaoReserva;
 	private String dtSolicitação;
+	private double vlTotalReserva;
 
 	public Reserva() {
 		super();
 	}
 
 	public Reserva(int codigoReserva, String dtEntrada, String dtSaida, int qtdeHospedesAdultos,
-			int qtdeHospedesCriancas, ReservaQuarto nrQuarto, Cliente cliente, String situacaoReserva, String dtSolicitação) {
+			int qtdeHospedesCriancas, ReservaQuarto  reservaQuarto, Cliente cliente, String situacaoReserva, String dtSolicitação, double vlTotalQuarto) {
 		super();
 		this.codigoReserva = codigoReserva;
 		this.dtEntrada = dtEntrada;
 		this.dtSaida = dtSaida;
 		this.qtdeHospedesAdultos = qtdeHospedesAdultos;
 		this.qtdeHospedesCriancas = qtdeHospedesCriancas;
-		this.nrQuarto = nrQuarto;
+		this.reservaQuarto =  reservaQuarto;
 		this.cliente = cliente;
 		this.situacaoReserva = situacaoReserva;
 		this.dtSolicitação = dtSolicitação;
 	}
 
-	public Reserva(String dtEntrada, String dtSaida, int qtdeHospedesAdultos, int qtdeHospedesCriancas, ReservaQuarto nrQuarto,
-			Cliente cliente) {
+	public Reserva(String dtEntrada, String dtSaida, int qtdeHospedesAdultos, int qtdeHospedesCriancas, ReservaQuarto reservaQuarto,
+			Cliente cliente, double vlTotalQuarto) {
 		super();
 		this.dtEntrada = dtEntrada;
 		this.dtSaida = dtSaida;
 		this.qtdeHospedesAdultos = qtdeHospedesAdultos;
 		this.qtdeHospedesCriancas = qtdeHospedesCriancas;
-		this.nrQuarto = nrQuarto;
+		this.reservaQuarto =  reservaQuarto;
 		this.cliente = cliente;
 	}
 
@@ -94,11 +95,11 @@ public class Reserva {
 	}
 
 	public ReservaQuarto getReservaQuarto() {
-		return nrQuarto;
+		return reservaQuarto;
 	}
 
 	public void setReservaQuarto(ReservaQuarto nrQuarto) {
-		this.nrQuarto = nrQuarto;
+		this.reservaQuarto = nrQuarto;
 	}
 
 	public Cliente getCliente() {
@@ -125,4 +126,21 @@ public class Reserva {
 		this.dtSolicitação = dtSolicitação;
 	}
 
+	public ReservaQuarto getNrQuarto() {
+		return reservaQuarto;
+	}
+
+	public void setNrQuarto(ReservaQuarto  reservaQuarto) {
+		this.reservaQuarto =  reservaQuarto;
+	}
+
+	public double getVlTotalReserva() {
+		return vlTotalReserva;
+	}
+
+	public void setVlTotalReserva(double vlTotalReserva) {
+		this.vlTotalReserva = vlTotalReserva;
+	}
+	
+	
 }

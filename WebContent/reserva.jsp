@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 
 <!DOCTYPE html>
 <html>
@@ -111,18 +112,21 @@
 				</div>
 				<div class="span_of_2">
 					<div class="span2_of_1">
+					<form var="tipoQuarto" items="${listaVl}">
 						<h4>Check-In:</h4>
 						<div class="book_date btm">
-							<form>
-								<input class="date" id="datepicker1" type="text"
+							
+								<input name="checkin" class="date" id="datepicker" type="text"
 									value="DD/MM/YY" onfocus="this.value = '';"
-									onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
-							</form>
+									onblur="if (this.value == '') {this.value = 'DD/MM/YY';}" />
+							
+
 						</div>
-						<div class="sel_room">
-							<h4>Número de Quartoss</h4>
-							<select id="country" onchange="change_country(this.value)"
-								class="frm-field required">
+						<div class="book_date btm">
+							</br>
+							<h4>Tipo do Quarto</h4>
+							<select name="tipoQuarto" id="country"
+								onchange="change_country(this.value)" class="frm-field required">
 								<option value="null">Selecione o tipo do quarto</option>
 								<option value="AX">Master Luxo</option>
 								<option value="AX">Luxo</option>
@@ -130,10 +134,23 @@
 								<option value="AX">Standard</option>
 							</select>
 						</div>
+
+						<div class="sel_room">
+							</br>
+							<h4>Adultos</h4>
+							<select name="adultos" id="country"
+								onchange="change_country(this.value)" class="frm-field required">
+								<option value="null">1</option>
+								<option value="AX">2</option>
+								<option value="AX">3</option>
+								<option value="AX">4</option>
+							</select>
+						</div>
 						<div class="sel_room left">
-							<h4>Adultos por Quarto</h4>
-							<select id="country" onchange="change_country(this.value)"
-								class="frm-field required">
+							</br>
+							<h4>Quantidade de Quartos</h4>
+							<select name="nrQuartos" id="country"
+								onchange="change_country(this.value)" class="frm-field required">
 								<option value="null">1</option>
 								<option value="AX">2</option>
 								<option value="AX">3</option>
@@ -144,15 +161,13 @@
 					<div class="span2_of_1">
 						<h4>Check-Out</h4>
 						<div class="book_date btm">
-							<form>
-								<input class="date" id="datepicker1" type="text"
-									value="DD/MM/YY" onfocus="this.value = '';"
-									onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
-							</form>
-						</div>
-						<div class="sel_room">
+								<input name="checkout" id="datepicker1" class="date" type="text"
+									value="DD/MM/YYYY" onfocus="this.value = '';"
+									onblur="if (this.value == '') {this.value = 'DD/MM/YY';}"/>
+													</div>
+						<div class="sel_room"></br>
 							<h4>Crianças de 0-2:</h4>
-							<select id="country" onchange="change_country(this.value)"
+							<select name="crianca0a2" id="country" onchange="change_country(this.value)"
 								class="frm-field required">
 								<option value="null">0</option>
 								<option value="AX">1</option>
@@ -161,23 +176,29 @@
 								<option value="AX">4</option>
 							</select>
 						</div>
-						<div class="sel_room left">
+						<div class="sel_room left"></br>
 							<h4>Crianças de 3-5:</h4>
-							<select id="country" onchange="change_country(this.value)"
+							<select name="crianca3a5" id="country" onchange="change_country(this.value)"
 								class="frm-field required">
-								<option value="null">0</option>
+								<option value="crianca1">0</option>
 								<option value="AX">1</option>
 								<option value="AX">2</option>
 								<option value="AX">3</option>
 								<option value="AX">4</option>
 							</select>
 						</div>
+						<div class="res_btn"></br></br></br></br></br></br>
+							<input type="submit" value="Calcular" style="width: 150px; height:30px;"></a></br></br>
+							<h4 name="valorTotal" id="valorTotal" value="${tipoQuarto.vlTotalQuarto}">Valor Estimado</h4>
+						</div>
+						</form>
 					</div>
+					
 					<div class="clear"></div>
 				</div>
 				<div class="res_btn">
-					<form>
-						<input type="submit" value="Reservar" style="width: 280px;">
+					<form action = "login.jsp" method="post">
+						<input type="submit" value="Reservar" style="width: 280px;"></a>
 					</form>
 				</div>
 			</div>

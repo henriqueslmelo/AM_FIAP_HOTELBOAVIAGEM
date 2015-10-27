@@ -14,29 +14,22 @@ package br.com.fiap.am.beans;
 
 public class ReservaQuarto {
 	
-	private Reserva codigoReserva;
+	private int codigoReservaQuarto;
 	private int nrQuarto;
 	private int qtdePessoaQuarto;
 	private String dsObservacao;
+	private TipoQuarto tipoQuarto;
 
 	public ReservaQuarto() {
 	}
 
-	public ReservaQuarto(Reserva codigoReserva, int nrQuarto,
-			int qtdePessoaQuarto, String dsObservacao) {
+	public ReservaQuarto(int codigoReserva, int nrQuarto,
+			int qtdePessoaQuarto, String dsObservacao, TipoQuarto tipoQuarto) {
 		super();
-		this.codigoReserva = codigoReserva;
+		this.codigoReservaQuarto = codigoReserva;
 		this.nrQuarto = nrQuarto;
 		this.qtdePessoaQuarto = qtdePessoaQuarto;
 		this.dsObservacao = dsObservacao;
-	}
-
-	public Reserva getCodigoReserva() {
-		return codigoReserva;
-	}
-
-	public void setCodigoReserva(Reserva codigoReserva) {
-		this.codigoReserva = codigoReserva;
 	}
 
 	public int getNrQuarto() {
@@ -62,5 +55,22 @@ public class ReservaQuarto {
 	public void setDsObservacao(String dsObservacao) {
 		this.dsObservacao = dsObservacao;
 	}
+
+	public int getCodigoReservaQuarto() {
+		return codigoReservaQuarto;
+	}
+
+	public void setCodigoReservaQuarto(int codigoReservaQuarto) {
+		this.codigoReservaQuarto = codigoReservaQuarto;
+	}
+
+	public TipoQuarto getTipoQuarto() {
+		return tipoQuarto;
+	}
+
+	public void setTipoQuarto(TipoQuarto tipoQuarto) {
+		this.tipoQuarto = tipoQuarto;
+	}
    
+	
 }
