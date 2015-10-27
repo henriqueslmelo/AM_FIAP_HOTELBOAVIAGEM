@@ -13,7 +13,6 @@ package br.com.fiap.am.dao;
  *
  */
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,7 +26,7 @@ import br.com.fiap.am.exception.Excecao;
 public class ClienteDAO {
 
 	// conexao
-	private Connection connection;
+	private static Connection connection;
 
 	public ClienteDAO() throws Excecao {
 		this.connection = new Conexao().getConnection();
@@ -37,8 +36,7 @@ public class ClienteDAO {
 	public List<Cliente> getLista() throws Excecao {
 		try {
 			List<Cliente> cliente = new ArrayList<Cliente>();
-			PreparedStatement stmt = connection
-					.prepareStatement("SELECT * FROM  T_AM_DFA_CLIENTE");
+			PreparedStatement stmt = connection.prepareStatement("SELECT FROM * T_AM_DFA_CLIENTE");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -67,27 +65,28 @@ public class ClienteDAO {
 		}
 
 	}
-	
-	//BUSCA USUÁRIO
-	public List<Cliente> getLogin() throws Excecao {
-		try {
-			List<Cliente> cliente = new ArrayList<Cliente>();
-			PreparedStatement stmt = connection
-					.prepareStatement("SELECT DS_EMAIL, DS_SENHA FROM T_AM_DFA_CLIENTE WHERE DS_EMAIL = ? AND DS_SENHA = ?");
-			ResultSet rs = stmt.executeQuery();
-			System.out.println("DAO");
-			while (rs.next()) {
-				System.out.println("teste");
-				Cliente cl = new Cliente();
-				cl.setEmail(rs.getString("DS_EMAIL"));
-				cl.setDsSenha(rs.getString("DS_SENHA"));
-				cliente.add(cl);
 
+	// BUSCA USUÁRIO
+	public boolean getLogin(Cliente cliente) throws Excecao {
+		try {
+
+			PreparedStatement stmt = connection
+					.prepareStatement("SELECT DS_EMAIL, DS_SENHA FROM T_AM_DFA_CLIENTE WHERE DS_EMAIL=? AND DS_SENHA=?");
+			stmt.setString(1, cliente.getEmail());
+			stmt.setString(2, cliente.getDsSenha());
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				rs.close();
+				stmt.close();
+				connection.close();
+				return true;
+			} else {
+				rs.close();
+				stmt.close();
+				connection.close();
+				return false;
 			}
-			rs.close();
-			stmt.close();
-			System.out.println("DAO2");
-			return cliente;
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
 		} finally {
@@ -99,6 +98,5 @@ public class ClienteDAO {
 		}
 
 	}
-
 
 }

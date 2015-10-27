@@ -11,9 +11,8 @@ public class LoginBO {
 private ClienteDAO  cd;
 	
 	
-	public List<Cliente> getLogin(String user, String password) throws Excecao{
-		System.out.println("BO");
+	public boolean getLogin(Cliente cliente) throws Excecao{
 		cd = new ClienteDAO();		
-		return cd.getLogin(); 
+		return cd.getLogin(cliente); 
 	}
 }
