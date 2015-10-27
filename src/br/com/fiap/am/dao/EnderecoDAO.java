@@ -38,7 +38,7 @@ public class EnderecoDAO {
 		try {
 			List<Endereco> endereco = new ArrayList<Endereco>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_PESSOA_ENDE");
+					.prepareStatement("SELECT *  FROM  T_AM_DFA_PESSOA_ENDE");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

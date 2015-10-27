@@ -36,7 +36,7 @@ public class ClienteDAO {
 	public List<Cliente> getLista() throws Excecao {
 		try {
 			List<Cliente> cliente = new ArrayList<Cliente>();
-			PreparedStatement stmt = connection.prepareStatement("SELECT FROM * T_AM_DFA_CLIENTE");
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM T_AM_DFA_CLIENTE");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
