@@ -75,7 +75,8 @@
 						<li class="active"><a href="index.jsp">Home</a></li> |
 						<li><a href="quartos.jsp">Quartos</a></li> |
 						<li><a href="reserva.jsp">Reserva</a></li> |
-						<li><a href="atividades.jsp">Atividades</a></li> |
+						<li><a href="atividades.jsp">Atividades</a></li>|
+						<li><a href="sobre.jsp">Sobre nós</a></li> |
 						<li><a href="contato.jsp">Contato</a></li>
 						<div class="clear"></div>
 					</ul>
@@ -89,6 +90,7 @@
 							<li><a href="quartos.jsp">Quartos</a></li>
 							<li><a href="reserva.jsp">Reserva</a></li>
 							<li><a href="atividades.jsp">Atividades</a></li>
+							<li><a href="sobre.jsp">Sobre nós</a></li> 
 							<li><a href="contato.jsp">Contato</a></li>
 						</ul>
 						<a href="#" id="pull">Menu</a>
@@ -128,6 +130,7 @@
 											<option value="AX">Standard</option>
 										</select>
 									</div>
+									
 								</li>
 								<li class="span1_of_1 left">
 									<h5>Check-In</h5>
@@ -149,6 +152,19 @@
 												onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
 										</form>
 									</div>
+									
+									<li class="span1_of_2">
+									<h5>Quantidade Quartos:</h5> <!----------start section_room----------->
+									<div class="section_room">
+										<select id="country" onchange="change_country(this.value)"
+											class="frm-field required">
+											<option value="null">1</option>
+											<option value="AX"">2</option>
+											<option value="AX">3</option>
+											<option value="AX">4</option>
+										</select>
+									</div>
+									
 								</li>
 								<li class="span1_of_2">
 									<h5>Adultos:</h5> <!----------start section_room----------->
@@ -161,6 +177,7 @@
 											<option value="AX">4</option>
 										</select>
 									</div>
+									
 								</li>
 								<li class="span1_of_2 left">
 									<h5>Crianças de 0-2:</h5>

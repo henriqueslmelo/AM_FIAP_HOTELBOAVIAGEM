@@ -715,11 +715,11 @@ p.para {
 
 .sel_room {
 	float: left;
-	width: 20%;
+	width: 22%;
 }
 
 .sel_room.left {
-	margin-left: 10%;
+	margin-left: 20%;
 }
 
 .book_date.btm {

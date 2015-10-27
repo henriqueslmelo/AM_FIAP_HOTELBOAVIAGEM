@@ -128,7 +128,7 @@
 							</select>
 						</div>
 						
-						<div class="sel_room left">
+						<div class="sel_room">
 							<h4>Quantidade Quartos</h4>
 							<select id="country" onchange="change_country(this.value)"
 								class="frm-field required">
