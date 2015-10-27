@@ -39,7 +39,7 @@ public class TipoQuartoDAO {
 		try {
 			List<TipoQuarto> tipoQuarto = new ArrayList<TipoQuarto>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT T_AM_DFA_TIPO_QUARTO");
+					.prepareStatement("SELECT * FROM T_AM_DFA_TIPO_QUARTO");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

@@ -40,7 +40,7 @@ public class QuartoDAO {
 		try {
 			List<Quarto> quarto = new ArrayList<Quarto>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_QUARTO");
+					.prepareStatement("SELECT * FROM T_AM_DFA_QUARTO");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

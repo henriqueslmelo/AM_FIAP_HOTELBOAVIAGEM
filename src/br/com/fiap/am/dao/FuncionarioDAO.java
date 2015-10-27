@@ -38,7 +38,7 @@ public class FuncionarioDAO {
 		try {
 			List<Funcionario> funcionario = new ArrayList<Funcionario>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_FUNCIONARIO");
+					.prepareStatement("SELECT * FROM T_AM_DFA_FUNCIONARIO");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

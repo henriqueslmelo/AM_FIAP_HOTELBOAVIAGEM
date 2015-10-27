@@ -38,7 +38,7 @@ public class ClienteDAO {
 		try {
 			List<Cliente> cliente = new ArrayList<Cliente>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_CLIENTE");
+					.prepareStatement("SELECT * FROM  T_AM_DFA_CLIENTE");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

@@ -36,7 +36,7 @@ public class PessoaDAO {
 		try {
 			List<Pessoa> pessoa = new ArrayList<Pessoa>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_CLIENTE");
+					.prepareStatement("SELECT * FROM T_AM_DFA_PESSOA");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

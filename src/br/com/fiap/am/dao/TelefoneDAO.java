@@ -37,7 +37,7 @@ public class TelefoneDAO {
 		try {
 			List<Telefone> telefone = new ArrayList<Telefone>();
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT FROM * T_AM_DFA_TELEFONE");
+					.prepareStatement("SELECT * FROM T_AM_DFA_TELEFONE");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
