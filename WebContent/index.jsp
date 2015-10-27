@@ -75,7 +75,8 @@
 						<li class="active"><a href="index.jsp">Home</a></li> |
 						<li><a href="quartos.jsp">Quartos</a></li> |
 						<li><a href="reserva.jsp">Reserva</a></li> |
-						<li><a href="atividades.jsp">Atividades</a></li> |
+						<li><a href="atividades.jsp">Atividades</a></li>|
+						<li><a href="sobre.jsp">Sobre nós</a></li> |
 						<li><a href="contato.jsp">Contato</a></li>
 						<div class="clear"></div>
 					</ul>
@@ -89,6 +90,7 @@
 							<li><a href="quartos.jsp">Quartos</a></li>
 							<li><a href="reserva.jsp">Reserva</a></li>
 							<li><a href="atividades.jsp">Atividades</a></li>
+							<li><a href="sobre.jsp">Sobre nós</a></li> 
 							<li><a href="contato.jsp">Contato</a></li>
 						</ul>
 						<a href="#" id="pull">Menu</a>
@@ -110,9 +112,9 @@
 				<div class="online_reservation">
 					<div class="b_room">
 						<div class="booking_room">
-							<h4>book a room online</h4>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry</p>
+							<h4>Faça sua reserva</h4>
+							<p>Saia da rotina e escolha uma de nossas acomodações, você desfrutará da comodidade de quartos amplos e 
+							confortáveis, além de contar com serviços personalizados. </p>
 						</div>
 						<div class="reservation">
 							<ul>
@@ -128,6 +130,7 @@
 											<option value="AX">Standard</option>
 										</select>
 									</div>
+									
 								</li>
 								<li class="span1_of_1 left">
 									<h5>Check-In</h5>
@@ -149,6 +152,19 @@
 												onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
 										</form>
 									</div>
+									
+									<li class="span1_of_2">
+									<h5>Quantidade Quartos:</h5> <!----------start section_room----------->
+									<div class="section_room">
+										<select id="country" onchange="change_country(this.value)"
+											class="frm-field required">
+											<option value="null">1</option>
+											<option value="AX"">2</option>
+											<option value="AX">3</option>
+											<option value="AX">4</option>
+										</select>
+									</div>
+									
 								</li>
 								<li class="span1_of_2">
 									<h5>Adultos:</h5> <!----------start section_room----------->
@@ -161,6 +177,7 @@
 											<option value="AX">4</option>
 										</select>
 									</div>
+									
 								</li>
 								<li class="span1_of_2 left">
 									<h5>Crianças de 0-2:</h5>
@@ -212,17 +229,17 @@
 			<div class="grids_of_3">
 				<div class="grid1_of_3">
 					<div class="grid1_of_3_img">
-						<a href="details.html"> <img src="images/pic2.jpg" alt="" />
+						<a href="details.html"> <img src="images/quartoC1m.jpg" alt="" />
 
 						</a>
 					</div>
 					<h4>
 						<a href="#">Standard<span>R$200,00</span></a>
 					</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and
-						typesetting industry. Lorem Ipsum has been the industry's standard
-						dummy text ever since the 1500s, when an unknown printer took a
-						galley of type and scrambled it to make a type specimen book.</p>
+					<p>Isolamento acústico, ar condicionado com controle de temperatura na cabeceira,
+						minibar, TV a cabo com 71 canais, cofre digital, banheiro com secador de cabelos,
+						telefone com o mesmo ramal do quarto, mesa de trabalho com ponto de internet banda larga,
+						pode ser configurado como casal ou solteiro duplo,metragem aproximada: 25 m2.</p>
 				</div>
 				<div class="grids_of_3">
 					<div class="grid1_of_3">
@@ -233,11 +250,13 @@
 						<h4>
 							<a href="#">Master<span>R$260,00</span></a>
 						</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry. Lorem Ipsum has been the industry's
-							standard dummy text ever since the 1500s, when an unknown printer
-							took a galley of type and scrambled it to make a type specimen
-							book.</p>
+						<p>Isolamento acústico, ar condicionado com controle de temperatura na cabeceira,minibar,
+							TV a cabo com 71 canais (sinal digital),TV LCD de 32, cofre digital, banheiros amenities diferenciados com secador de cabelos,
+							telefone com o mesmo ramal do quarto, mesa de trabalho com ponto de internet banda larga,
+							poltronas com descanso para os pés, pode ser configurado como casal, solteiro duplo ou solteiro triplo,
+							metragem aproximada: 30 m2.
+
+</p>
 					</div>
 					<div class="grid1_of_3">
 						<div class="grid1_of_3_img">
@@ -248,11 +267,13 @@
 						<h4>
 							<a href="#">Luxo<span>R$330,00</span></a>
 						</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry. Lorem Ipsum has been the industry's
-							standard dummy text ever since the 1500s, when an unknown printer
-							took a galley of type and scrambled it to make a type specimen
-							book.</p>
+						<p>Apartamentos localizados nos últimos andares com acabamento sofisticado 
+							e decoração especial: cama de casal, poltrona, espelho de corpo inteiro e iluminação indireta.	
+							ar condicionado com controle de temperatura na cabeceira, isolamento acústico,
+							MP3 player, minibar, TV a cabo com 71 canais (sinal digital), TV LCD de 32" com giro em torno do próprio eixo,
+							cofre digital, banheiros com piso especial antiderrapante e secador de cabelos,
+							produtos básicos de higiene pessoal em necessaire exclusiva, telefone com o mesmo ramal do quarto,
+							ampla bancada de trabalho com ambiente para leitura e ponto de internet banda larga, metragem aproximada: 30 m2.</p>
 					</div>
 					<div class="grid1_of_3">
 						<div class="grid1_of_3_img">
@@ -263,11 +284,15 @@
 						<h4>
 							<a href="#">Master Luxo<span>R$400,00</span></a>
 						</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry. Lorem Ipsum has been the industry's
-							standard dummy text ever since the 1500s, when an unknown printer
-							took a galley of type and scrambled it to make a type specimen
-							book.</p>
+						<p>Apartamentos localizados nos últimos andares com acabamento 
+							sofisticado e decoração especial: cama de casal, poltrona, 
+							espelho de corpo inteiro e iluminação indireta, antesala com TV LCD 21" e mesa de vidro com 4 cadeiras,
+							isolamento acústico, ar condicionado com controle de temperatura na cabeceira,
+							MP3 player, minibar, TV a cabo com 71 canais (sinal digital), TV LCD de 32",
+							cofre digital,banheiros com piso especial antiderrapante e secador de cabelos,
+							produtos básicos de higiene pessoal em necessaire exclusiva, telefone com o mesmo ramal do quarto,
+							ampla bancada de trabalho com ambiente para leitura e ponto de internet banda larga.
+						</p>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -279,16 +304,17 @@
 				<div class="footer">
 					<div class="copy">
 						<p class="link">
-							<span>© Todos os direitos reservados | Template by&nbsp;<a
-								href="http://w3layouts.com/"> W3Layouts</a></span>
+							<span>© Todos os direitos reservados | Template by DFAB
 						</p>
 					</div>
 					<div class="f_nav">
 						<ul>
-							<li><a href="index.jsp">Home</a></li>
-							<li><a href="quartos.jsp">Quartos</a></li>
-							<li><a href="reserva.jsp">Reserva</a></li>
-							<li><a href="contato.jsp">Contato</a></li>
+						<li><a href="index.jsp">Home</a></li>
+						<li><a href="quartos.jsp">Quartos</a></li>
+						<li><a href="reserva.jsp">Reserva</a></li>
+						<li><a href="atividades.jsp">Atividades</a></li>
+						<li><a href="sobre.jsp">Sobre nós</a></li>
+						<li><a href="contato.jsp">Contato</a></li>
 						</ul>
 					</div>
 					<div class="soc_icons">

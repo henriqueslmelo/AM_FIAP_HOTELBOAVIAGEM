@@ -57,6 +57,7 @@
 				<li><a href="quartos.jsp">Quartos</a></li> |
 				<li><a href="reserva.jsp">Reserva</a></li> |
 				<li class="active"><a href="atividades.jsp">Atividades</a></li> |
+				<li><a href="sobre.jsp">Sobre nós</a></li> |
 				<li><a href="contato.jsp">Contato</a></li>
 				<div class="clear"></div>
 			</ul>
@@ -70,6 +71,7 @@
 				<li><a href="quartos.jsp">Quartos</a></li> 
 				<li><a href="reservas.jsp">Reservas</a></li> 
 				<li><a href="atividades.jsp">Atividades</a></li> 
+				<li><a href="sobre.jsp">Sobre nós</a></li> 
 				<li><a href="contato.jsp">Contato</a></li>
 				</ul>
 				<a href="#" id="pull">Menu</a>
@@ -86,95 +88,79 @@
 				<ul class="service_list">
 					<li>
 						<div class="ser_img">
-							<a href="details.html">
-								<img src="images/ser_pic1.jpg" alt="" />
+								<img src="images/ativ1.jpg" alt="" />
 								<span class="next"> </span>
 							</a>
 						</div>	
-						<a href="details.html"><h3>Sed condimentum</h3></a>
-						<p class="para">There are many variations of passages of Lorem Ipsum available,</p>
-						<h4><a  href="details.html">Lorem ipsum</a></h4>
+						<h3>Piscina</h3>
+						<p class="para">Adulto e infantil</p>
 					</li>
 					<li>
 						<div class="ser_img">
-							<a href="details.html">
-								<img src="images/ser_pic2.jpg" alt="" />
+								<img src="images/ativ2.jpg" alt="" />
 								<span class="next"> </span>
 							</a>
 						</div>	
-						<a href="details.html"><h3>Integer facilisis</h3></a>
-						 <p class="para">Our website design and development provides quality web,</p>
-						 <h4><a href="details.html">Nulla accumsan</a></h4>
+						<h3>Lavanderia</h3>
+						 <p class="para">Serviço de lavanderia</p>
 					</li>
 					<li>
 						<div class="ser_img">
-							<a href="details.html">
-								<img src="images/ser_pic3.jpg" alt="" />
+								<img src="images/ativ3.jpg" alt="" />
 								<span class="next"> </span>
 							</a>
 						</div>						
-						 <a href="details.html"><h3>Morbi sit amet mauris</h3></a>
-						 <p class="para">There are many variations of passages of Lorem Ipsum available,</p>
-						 <h4><a href="details.html">Vestilum feliing</a></h4>
+						 <h3>Cabelereiro</h3>
+						 <p class="para">Serviço de cabelereiro masculino e feminino</p>
 					</li>
 					<li>
 						<div class="ser_img">
-							<a href="details.html">
-								<img src="images/ser_pic4.jpg" alt="" />
+								<img src="images/ativ4.jpg" alt="" />
 								<span class="next"> </span>
 							</a>
 						</div>						
-						<a href="details.html"><h3>Nulla commodo erat</h3></a>
-						 <p class="para">Lorem ipsum dolor sit amet, consectetur elit,EIUSMOD tempor,</p>
-						 <h4><a href="details.html">Nulla commodo</a></h4>
+						<h3>Spa</h3>
+						 <p class="para">Spa com massagem e energização</p>
 					</li>
 					<div class="clear"></div>
 				</ul>
 				<ul class="service_list top">
 					<li>
 						<div class="ser_img">
-							<a href="details.html">
-								<img src="images/ser_pic5.jpg" alt="" />
+								<img src="images/ativ5.jpg" alt="" />
 								<span class="next"> </span>
 							</a>
 						</div>						
-						 <a href="details.html"><h3>Nulla commodo erat</h3></a>
-						 <p class="para">There are many variations of passages of Lorem Ipsum available,</p>
-						<h4><a  href="details.html">Lorem ipsum</a></h4>
+						 <h3>Ofurô</h3>
+						 <p class="para">Ofurô para relaxamento</p>
 					</li>
 					<li>
 						<div class="ser_img">
-							<a href="details.html">
-								<img src="images/ser_pic6.jpg" alt="" />
+								<img src="images/ativ6.jpg" alt="" />
 								<span class="next"> </span>
 							</a>
 						</div>						
-						 <a href="details.html"><h3>Morbi sit amet mauris</h3></a>
-						 <p class="para">Lorem ipsum dolor sit amet, consectetur elit,EIUSMOD tempor,</p>
-						 <h4><a href="details.html">Nulla accumsan</a></h4>
+						 <h3>Almoço e Jantar</h3>
+						 <p class="para">Serviço de almoço e jantar</p>
 					</li>
 					<li>
 						<div class="ser_img">
-							<a href="details.html">
-								<img src="images/ser_pic7.jpg" alt="" />
+								<img src="images/ativ7.jpg" alt="" />
 								<span class="next"> </span>
 							</a>
 						</div>	
-						 <a href="details.html"><h3>Integer facilisis</h3></a>
-						<p class="para">There are many variations of passages of Lorem Ipsum available,</p>
-						<h4><a href="details.html">Vestilum feliing</a></h4>
+						<h3>Deck Bar</h3>
+						<p class="para">Cardapio de vinhos e cervejas</p>
 											
 					</li>
 					<li>
 						<div class="ser_img">
-							<a href="details.html">
-								<img src="images/ser_pic8.jpg" alt="" />
+								<img src=images/ativ8.jpg alt="" />
 								<span class="next"> </span>
 							</a>
 						</div>		
-						 <a href="details.html"><h3>Sed condimentum</h3></a>
-						 <p class="para">Our website design and development provides quality web,</p>
-						<h4><a  href="details.html">Lorem ipsum</a></h4>
+						 <h3>Cozinha Profissional</h3>
+						 <p class="para">Cozinheiros especializados</p>
 					</li>
 					<div class="clear"></div>
 				</ul>
@@ -189,14 +175,16 @@
 <div class="wrap">
 <div class="footer">
 			<div class="copy">
-				<p class="link"><span>© Todos os direitos reservados | Template by&nbsp; DFAB</a></span></p>
+				<p class="link"><span>© Todos os direitos reservados | Template DFAB</a></span></p>
 			</div>
 			<div class="f_nav">
 				<ul>
-					<li><a href="index.jsp">Home</a></li>
-					<li><a href="quartos.jsp">Quartos</a></li>
-					<li><a href="reserva.jsp">Reserva</a></li>
-					<li><a href="contato.jsp">Contato</a></li>
+						<li><a href="index.jsp">Home</a></li>
+						<li><a href="quartos.jsp">Quartos</a></li>
+						<li><a href="reserva.jsp">Reserva</a></li>
+						<li><a href="atividades.jsp">Atividades</a></li>
+						<li><a href="sobre.jsp">Sobre nós</a></li>
+						<li><a href="contato.jsp">Contato</a></li>
 				</ul>
 			</div>
 			<div class="soc_icons">

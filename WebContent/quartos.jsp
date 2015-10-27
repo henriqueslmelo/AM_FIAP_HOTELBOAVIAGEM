@@ -60,7 +60,8 @@
 						<li><a href="index.jsp">Home</a></li> |
 						<li class="active"><a href="quartos.jsp">Quartos</a></li> |
 						<li><a href="reserva.jsp">Reserva</a></li> |
-						<li><a href="atividades.jsp">Atividades</a></li> |
+						<li><a href="atividades.jsp">Atividades</a></li>|
+						<li><a href="sobre.jsp">Sobre nós</a></li> |
 						<li><a href="contato.jsp">Contato</a></li>
 						<div class="clear"></div>
 					</ul>
@@ -74,6 +75,7 @@
 							<li><a href="quartos.jsp">Quartos</a></li>
 							<li><a href="reserva.jsp">Reserva</a></li>
 							<li><a href="Atividades.jsp">Atividades</a></li>
+							<li><a href="sobre.jsp">Sobre nós</a></li> 
 							<li><a href="contato.jsp">Contato</a></li>
 						</ul>
 						<a href="#" id="pull">Menu</a>
@@ -88,45 +90,74 @@
 			<div class="main">
 				<div class="content">
 					<div class="room">
-						<h4>hill view room</h4>
-						<p class="para">There are many variations of passages of Lorem
-							Ipsum available, but the majority have suffered alteration in
-							some form, by injected humour, or randomised words which don't
-							look even slightly believable. If you are going to use a passage
-							of Lorem Ipsum, you need to be sure there isn't anything
-							embarrassing hidden in the middle of text. All the Lorem Ipsum
-							generators on the Internet tend to repeat.</p>
+						<h4>Nossas acomodações</h4>
+						<p class="para">O Hotel Boa Viagem oferece 50 apartamentos subdivididos em Standard, Superior, Suíte Luxo e Suíte Master. 
+						O hotel ainda conta com andares exclusivos para não fumantes e acomodações especiais para deficientes físicos e alérgicos. 
+						Nossos hóspedes também têm acesso à internet wireless gratuita em todas as dependências. 
+						Veja abaixo as principais características de cada tipo de acomodação.
+</p>
 					</div>
 					<div class="grids_of_2">
 						<div class="grids_of_img">
-							<img src="images/pic4.jpg" alt="" />
+							<img src="images/quartop1.jpg" alt="" />
 						</div>
 						<div class="grids_of_para">
-							<p class="para">There are many variations of passages of
-								Lorem Ipsum available, but the majority have suffered alteration
-								in some form, by injected humour, or randomised words which
-								don't look even slightly believable. If you are going to use a
-								passage of Lorem Ipsum, you need to be sure there isn't anything
-								embarrassing hidden in the middle of text. All the Lorem Ipsum
-								generators on the Internet tend to repeat.</p>
+							<p class="para">Isolamento acústico, ar condicionado com controle de temperatura na cabeceira,
+						minibar, TV a cabo com 71 canais, cofre digital, banheiro com secador de cabelos,
+						telefone com o mesmo ramal do quarto, mesa de trabalho com ponto de internet banda larga,
+						pode ser configurado como casal ou solteiro duplo,metragem aproximada: 25 m2.</p>
 						</div>
 						<div class="clear"></div>
 					</div>
 					<div class="grids_of_2">
 						<div class="grids_of_img">
-							<img src="images/pic5.jpg" alt="" />
+							<img src="images/quartop2.jpg" alt="" />
 						</div>
+						
 						<div class="grids_of_para">
-							<p class="para">There are many variations of passages of
-								Lorem Ipsum available, but the majority have suffered alteration
-								in some form, by injected humour, or randomised words which
-								don't look even slightly believable. If you are going to use a
-								passage of Lorem Ipsum, you need to be sure there isn't anything
-								embarrassing hidden in the middle of text. All the Lorem Ipsum
-								generators on the Internet tend to repeat.</p>
+							<p class="para">Isolamento acústico, ar condicionado com controle de temperatura na cabeceira,minibar,
+							TV a cabo com 71 canais (sinal digital),TV LCD de 32, cofre digital, banheiros amenities diferenciados com secador de cabelos,
+							telefone com o mesmo ramal do quarto, mesa de trabalho com ponto de internet banda larga,
+							poltronas com descanso para os pés, pode ser configurado como casal, solteiro duplo ou solteiro triplo,
+							metragem aproximada: 30 m2.</p>
 						</div>
 						<div class="clear"></div>
 					</div>
+										<div class="grids_of_2">
+						<div class="grids_of_img">
+							<img src="images/quartop3.jpg" alt="" />
+						</div>
+						
+						<div class="grids_of_para">
+							<p class="para">Apartamentos localizados nos últimos andares com acabamento sofisticado 
+							e decoração especial: cama de casal, poltrona, espelho de corpo inteiro e iluminação indireta.	
+							ar condicionado com controle de temperatura na cabeceira, isolamento acústico,
+							MP3 player, minibar, TV a cabo com 71 canais (sinal digital), TV LCD de 32" com giro em torno do próprio eixo,
+							cofre digital, banheiros com piso especial antiderrapante e secador de cabelos,
+							produtos básicos de higiene pessoal em necessaire exclusiva, telefone com o mesmo ramal do quarto,
+							ampla bancada de trabalho com ambiente para leitura e ponto de internet banda larga, metragem aproximada: 30 m2.</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					
+						<div class="grids_of_2">
+						<div class="grids_of_img">
+							<img src="images/quartop4.jpg" alt="" />
+						</div>
+						
+						<div class="grids_of_para">
+							<p class="para">Apartamentos localizados nos últimos andares com acabamento 
+							sofisticado e decoração especial: cama de casal, poltrona, 
+							espelho de corpo inteiro e iluminação indireta, antesala com TV LCD 21" e mesa de vidro com 4 cadeiras,
+							isolamento acústico, ar condicionado com controle de temperatura na cabeceira,
+							MP3 player, minibar, TV a cabo com 71 canais (sinal digital), TV LCD de 32",
+							cofre digital,banheiros com piso especial antiderrapante e secador de cabelos,
+							produtos básicos de higiene pessoal em necessaire exclusiva, telefone com o mesmo ramal do quarto,
+							ampla bancada de trabalho com ambiente para leitura e ponto de internet banda larga.</p>
+						</div>
+						<div class="clear"></div>
+					</div>
+					
 
 				</div>
 				<div class="sidebar">
@@ -135,15 +166,13 @@
 							<input type="submit" value="Reservar" style="width: 82px;">
 						</form>
 					</div>
-					<h4>room features</h4>
+					<h4>Principais Caracteristicas dos quartos</h4>
 					<ul class="s_nav">
-						<li><a href="#">laptop-size safe</a></li>
-						<li><a href="#">Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit.</a></li>
-						<li><a href="#">Etiam malesuada leo ornare</a></li>
-						<li><a href="#">Sed eu magna sed lorem tincidunt</a></li>
-						<li><a href="#">Proin id diam eleifend neque auctor
-								scelerisque.</a></li>
+						<li>Conforto</a></li>
+						<li>Quartos insonorizados</li>
+						<li>Wi-Fi incluso no valor da reserva</li>
+						<li>Limpeza diária</li>
+						<li>TV e telefone em todos os tipos de quarto</li>
 					</ul>
 					<h4>Formas de Pagamento</h4>
 					<ul class="s_nav1">
@@ -163,8 +192,7 @@
 			<div class="footer">
 				<div class="copy">
 					<p class="link">
-						<span>© Todos os direitos reservados | Template by&nbsp;
-							DFAB</a>
+						<span>© Todos os direitos reservados | Template by DFAB</a>
 						</span>
 					</p>
 				</div>
@@ -173,6 +201,8 @@
 						<li><a href="index.jsp">Home</a></li>
 						<li><a href="quartos.jsp">Quartos</a></li>
 						<li><a href="reserva.jsp">Reserva</a></li>
+						<li><a href="atividades.jsp">Atividades</a></li>
+						<li><a href="sobre.jsp">Sobre nós</a></li>
 						<li><a href="contato.jsp">Contato</a></li>
 					</ul>
 				</div>
