@@ -63,5 +63,34 @@ public class FuncionarioDAO {
 		}
 
 	}
+	
+	//PESQUISAR
+	public boolean Pesquisar(int intID) throws Excecao {
+		try{
+		Funcionario funcionario = new Funcionario();
+		PreparedStatement stmt = this.connection
+		.prepareStatement("SELECT * FROM T_TAG_VOLUNTARIO WHERE ID_VOLUNTARIO = ?");
+		stmt.setInt(1, intID);
+		ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				funcionario.setNome(rs.getNString("NOME_PESSOA"));
+				funcionario.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
 
+			}
+
+			rs.close();
+			stmt.close();
+			return true;
+		} catch (Exception e) {
+			throw new Excecao("Ocorreu um erro", e);
+		} finally {
+			try {
+				connection.close();
+			} catch (Exception e) {
+				throw new Excecao("Ocorreu um erro", e);
+			}
+		}
+
+	}
+	
 }

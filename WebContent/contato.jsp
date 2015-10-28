@@ -60,7 +60,9 @@
 				<li><a href="reserva.jsp">Reserva</a></li> |
 				<li><a href="atividades.jsp">Atividades</a></li>|
 				<li><a href="sobre.jsp">Sobre nós</a></li> |
-				<li class="active"><a href="contato.jsp">Contato</a></li>
+				<li class="active"><a href="contato.jsp">Contato</a></li>|
+				<li><a href="AcessoInterno.jsp">Acesso Interno</a></li> 
+				
 				<div class="clear"></div>
 			</ul>
 			<!-- start profile_details -->
@@ -75,6 +77,8 @@
 				<li><a href="atividades.jsp">Atividades</a></li> 
 				<li><a href="sobre.jsp">Sobre nós</a></li> 
 				<li><a href="contato.jsp">Contato</a></li>
+				<li><a href="AcessoInterno.jsp">Acesso Interno</a></li> 
+				
 				</ul>
 				<a href="#" id="pull">Menu</a>
 			</nav>
@@ -148,6 +152,8 @@
 						<li><a href="atividades.jsp">Atividades</a></li>
 						<li><a href="sobre.jsp">Sobre nós</a></li>
 						<li><a href="contato.jsp">Contato</a></li>
+						<li><a href="AcessoInterno.jsp">Acesso Interno</a></li> 
+						
 				</ul>
 			</div>
 			<div class="soc_icons">
