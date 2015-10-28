@@ -149,8 +149,7 @@ public class ConsumoDAO {
 	public int Excluir(Consumo consumo) throws Excecao {
 		try {
 			PreparedStatement stmt = connection
-					.prepareStatement("DELETE FROM T_AM_DFA_CONSUMO"
-							+ "WHERE CD_CONSUMO=?");
+					.prepareStatement("DELETE FROM T_AM_DFA_CONSUMO WHERE CD_CONSUMO=?");
 
 			stmt.setInt(1, consumo.getCodigoConsumo());
 			int saida = stmt.executeUpdate();

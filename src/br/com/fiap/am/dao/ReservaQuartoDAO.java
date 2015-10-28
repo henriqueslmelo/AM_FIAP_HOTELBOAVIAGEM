@@ -84,8 +84,12 @@ public class ReservaQuartoDAO {
 			}
 		}
 
-	}
-	}
-
-
+	} 
+	
 }
+	
+	
+
+
+
+

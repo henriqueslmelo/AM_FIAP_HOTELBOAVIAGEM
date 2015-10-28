@@ -46,7 +46,7 @@ public class AlterarConsumo {
 		System.out.println("Alterado!");
 
 	}catch (Exception e){
-		throw new Excecao ("Falha", e);
+		throw new Excecao ("Erro", e);
 	}
 	}
 }

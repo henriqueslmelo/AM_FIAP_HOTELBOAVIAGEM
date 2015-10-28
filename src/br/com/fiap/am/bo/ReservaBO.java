@@ -29,7 +29,7 @@ public class ReservaBO {
 	}
 	
 	
-	public Reserva pesquisaVoluntario(int id) throws Exception{
+	public boolean pesquisaVoluntario(int id) throws Exception{
 		rd = new ReservaDAO();
 		return rd.getPesquisar(id);
 	}

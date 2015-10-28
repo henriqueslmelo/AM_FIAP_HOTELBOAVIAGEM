@@ -15,7 +15,7 @@ public class ReservaQuartoBO {
 		return rq.getLista(); 
 	}
 
-	public ReservaQuarto pesquisaReservaQuarto(int id) throws Exception{
+	public boolean pesquisaReservaQuarto(int id) throws Exception{
 		rq = new ReservaQuartoDAO();
 		return rq.pesquisar(id);
 	}
