@@ -3,6 +3,8 @@ package br.com.fiap.am.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,18 +38,23 @@ public class Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
-		TipoQuarto tipo = new TipoQuarto();
+		
+		TipoQuarto  tipo = new TipoQuarto();
+		TipoQuartoBO tipoBo = new TipoQuartoBO();
 		tipo.setDescricao(request.getParameter("tipoQuarto"));
-		System.out.println("BEANS");
-		TipoQuartoBO tipoQuarto = new TipoQuartoBO();
-		try {
-			tipoQuarto.listaVl();
-		} catch (Excecao e) {
-			e.printStackTrace();
+			request.setAttribute("tipoQuarto", tipoBo);
+			request.getRequestDispatcher("reserva.jsp").forward(request, response);
+			try {
+				tipo = tipoBo.consultar(tipo);
+				
+			} catch (Excecao e) {
+				e.printStackTrace();
+			}
+			request.setAttribute("tipo", tipo.getVlQuarto());
+			double valor = tipo.getVlQuarto();
+			String valorTexto = String.valueOf(valor);
+			String destination = getInitParameter(valorTexto);
 		}
-		System.out.println("NEW BO");
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

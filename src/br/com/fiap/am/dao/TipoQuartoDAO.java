@@ -68,40 +68,22 @@ public class TipoQuartoDAO {
 	}
 
 	
-	public TipoQuarto Pesquisar(String srtipoQuarto) throws Excecao {
-		TipoQuarto tipoQuarto = new TipoQuarto();
-		System.out.println("DAO");
+	public TipoQuarto consultar(TipoQuarto tipo) throws Excecao {
 		try {
-
 			PreparedStatement stmt = connection
-					.prepareStatement("SELECT * FROM T_AM_DFA_TIPO_QUARTO WHERE DS_TIPO_QUARTO=?");
-			stmt.setString(1, srtipoQuarto);
+					.prepareStatement("SELECT * FROM T_AM_DFA_TIPO_QUARTO WHERE DS_TIPO_QUARTO = ?");
+			stmt.setString(1, tipo.getDescricao());
 			ResultSet rs = stmt.executeQuery();
-			System.out.println("DAO QUERY");
 			if (rs.next()) {
-				tipoQuarto.setVlQuarto(rs.getDouble("VL_TIPO_QUARTO"));
+				tipo.setVlQuarto(rs.getDouble("VL_TIPO_QUARTO"));
 				rs.close();
 				stmt.close();
 				connection.close();
-				System.out.println("DAOTREU");
-				return tipoQuarto;
 				
-			} else {
-				rs.close();
-				stmt.close();
-				connection.close();
-				System.out.println("FALSE");
-				return tipoQuarto;
 			}
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
-		} finally {
-			try {
-				connection.close();
-			} catch (Exception e) {
-				throw new Excecao("Ocorreu um erro", e);
-			}
 		}
-
+		return tipo;
 	}
 }

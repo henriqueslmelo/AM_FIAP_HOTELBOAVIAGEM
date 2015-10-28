@@ -1,6 +1,5 @@
 package br.com.fiap.am.bo;
 
-import java.util.List;
 
 import br.com.fiap.am.beans.TipoQuarto;
 import br.com.fiap.am.dao.TipoQuartoDAO;
@@ -10,12 +9,10 @@ public class TipoQuartoBO {
 
 
 private TipoQuartoDAO tp;
+private TipoQuarto tipoQuarto;
 	
-	public TipoQuarto listaVl() throws Excecao{
-		tp = new TipoQuartoDAO();	
-		System.out.println("BO");
-		return tp.Pesquisar("FABIOBAITOL"); 
-		
+	public TipoQuarto consultar(TipoQuarto tipo) throws Excecao{
+		return new TipoQuartoDAO().consultar(tipo);
 	}
 
 }
