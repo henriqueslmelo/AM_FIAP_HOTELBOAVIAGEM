@@ -41,7 +41,7 @@ public class ServletAcessoInterno extends HttpServlet {
 		Funcionario funcionario = new Funcionario();
 	
 		int id= (Integer.parseInt(request.getParameter("codigo")));
-		System.out.println(funcionario.getCodigoFuncionario());
+		funcionario.getCodigoFuncionario();
 		
 		AcessoInternoBO ac = new AcessoInternoBO();
 		boolean result = false;

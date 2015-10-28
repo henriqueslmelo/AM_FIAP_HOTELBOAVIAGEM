@@ -41,7 +41,7 @@ public class ReservaDAO {
 
 	public void inserir(Reserva reserva) throws Exception {
 		String sql = "INSERT INTO T_AM_DFAB_RESERVA"
-				+ "(DT_SOLICITACAO,DT_ENTRADA, DT_SAIDA, QT_ADULTO, QT_CRIANCA,ST_RESERVA, NR_QUARTO, CD_CLIENTE, CD_FUNCIONARIO) values (?,?,?,?,?,?,?,?,?)";
+				+ "(DT_SOLICITACAO,DT_ENTRADA, DT_SAIDA, QT_ADULTO, QT_CRIANCA,ST_RESERVA, NR_QUARTO, CD_CLIENTE) values (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		try {
 			stmt.setString(1, reserva.getDtSolicitação());
@@ -59,6 +59,9 @@ public class ReservaDAO {
 
 			Funcionario fun = new Funcionario();
 			stmt.setInt(9, fun.getCodigoFuncionario());
+			
+		    reserva.setReservaQuarto(quar);
+		    reserva.setCliente(cl);
 
 			stmt.execute();
 			stmt.close();

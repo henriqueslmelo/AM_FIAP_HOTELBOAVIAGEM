@@ -69,28 +69,31 @@ public class FuncionarioDAO {
 		try{
 		Funcionario funcionario = new Funcionario();
 		PreparedStatement stmt = this.connection
-		.prepareStatement("SELECT * FROM T_TAG_VOLUNTARIO WHERE ID_VOLUNTARIO = ?");
-		stmt.setInt(1, intID);
+		.prepareStatement("SELECT CD_FUNCIONARIO FROM T_AM_DFA_FUNCIONARIO WHERE CD_FUNCIONARIO = ?");
+		stmt.setInt(1,funcionario.getCodigoFuncionario());
+		
 		ResultSet rs = stmt.executeQuery();
-			if (rs.next()) {
-				funcionario.setNome(rs.getNString("NOME_PESSOA"));
-				funcionario.setCodigoFuncionario(rs.getInt("CD_FUNCIONARIO"));
-
-			}
-
+		if (rs.next()) {
 			rs.close();
 			stmt.close();
+			connection.close();
 			return true;
+		} else {
+			rs.close();
+			stmt.close();
+			connection.close();
+			return false;
+		}
+	} catch (Exception e) {
+		throw new Excecao("Ocorreu um erro", e);
+	} finally {
+		try {
+			connection.close();
 		} catch (Exception e) {
 			throw new Excecao("Ocorreu um erro", e);
-		} finally {
-			try {
-				connection.close();
-			} catch (Exception e) {
-				throw new Excecao("Ocorreu um erro", e);
-			}
 		}
-
 	}
+
+}
 	
 }

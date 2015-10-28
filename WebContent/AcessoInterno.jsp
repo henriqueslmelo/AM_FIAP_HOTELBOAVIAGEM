@@ -101,10 +101,10 @@
 					    <form>
 					    	<div>
 						    	<span><label>CODIGO FUNCIONÁRIO</label></span>
-						    	<span><input name="codigo" type="text" placeholder="Codigo" class="textbox" required="required" oninvalid="this.setCustomValidity('Preencha esse campo')"></span>
+						    	<span><input name="name" type="text" placeholder="Codigo"></span>
 						    
 					<div class="date_btn">
-						<form action="Consumo.jsp">
+					<form action="Consumo.jsp" method="post">
 							<input type="submit" value="Conectar" style="width: 82px;">
 							
 						</form>
